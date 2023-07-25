@@ -56,7 +56,7 @@ Overall, this course will be split into two main parts: (1) learning the basics 
   
  | Topic | Reading | Assignment | Due Date | In Class Code |
   | :---  | :---:  | :---:  | :---:  | :---: |
-  | [Vectors, Matrices, and Arrays]() | | | Tuesday, 9/12| [Data Structures I]() [Data Structures II]()|
+  | [Vectors, Matrices, and Arrays]() | | | TBD | [Data Structures I]() [Data Structures II]()|
   | [Lists and Data Frames]() | [Ch. 20 in R for Data Science](http://r4ds.had.co.nz/vectors.html)| | | [Data Structures III]() |
   | [Tibbles](http://r4ds.had.co.nz/tibbles.html)| [Ch. 10 in R for Data Science](http://r4ds.had.co.nz/tibbles.html)|  | TBD | [Tibbles]() |
   | [String Analysis](http://r4ds.had.co.nz/strings.html)|[Ch. 14 in R for Data Science](http://r4ds.had.co.nz/strings.html) |  | TBD| [String Analysis I]()|

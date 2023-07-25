@@ -47,21 +47,21 @@ Overall, this course will be split into two main parts: (1) learning the basics 
 
 | Topic | Reading | Assignment | Due Date | In Class Code |
  | :---  | :---:  | :---:  | :---:  | :---: |
- | [Introduction - History of Data Science]() | [Ch. 1 What is Data Science?](https://www.safaribooksonline.com/library/view/doing-data-science/9781449363871/ch01.html)| [HW 1]() | Thursday, 8/24| |
- | [R and RStudio]()| | [HW 2]() | TBD| [My First Code]() |
- | [R Packages and RMarkdown]()   | | [HW 3]()| TBD | [My First Knit]() |
+ | [Introduction - History of Data Science]() | [Ch. 1 What is Data Science?](https://www.safaribooksonline.com/library/view/doing-data-science/9781449363871/ch01.html)|  | Thursday, 8/24| |
+ | [R and RStudio]() | |  | TBD| First Code |
+ | [Packages and RMarkdown]()  | | | TBD | First Knit |
   
   
  **Data Structures in R**
   
  | Topic | Reading | Assignment | Due Date | In Class Code |
   | :---  | :---:  | :---:  | :---:  | :---: |
-  | [Vectors, Matrices, and Arrays]() | | [HW 4]()| Tuesday, 9/12| [[Data Structures I]]() [[Data Structures II]]()|
+  | [Vectors, Matrices, and Arrays]() | | | Tuesday, 9/12| [[Data Structures I]]() [[Data Structures II]]()|
   | [Lists and Data Frames]() | [Ch. 20 in R for Data Science](http://r4ds.had.co.nz/vectors.html)| | | [Data Structures III]() |
-  | [Tibbles](http://r4ds.had.co.nz/tibbles.html)| [Ch. 10 in R for Data Science](http://r4ds.had.co.nz/tibbles.html)| [HW 5]() | TBD | [Tibbles]() |
-  | [String Analysis](http://r4ds.had.co.nz/strings.html)|[Ch. 14 in R for Data Science](http://r4ds.had.co.nz/strings.html) | [HW 6]() | TBD| [String Analysis I]()|
-   | [String Analysis 2](http://r4ds.had.co.nz/strings.html)|[Ch. 14 in R for Data Science](http://r4ds.had.co.nz/strings.html) | [HW 7]()| TBD | [String Analysis II]() |
-  | [Factors](http://r4ds.had.co.nz/factors.html) | [Ch. 15 in R for Data Science](http://r4ds.had.co.nz/factors.html)| | | [Factors]() |
+  | [Tibbles](http://r4ds.had.co.nz/tibbles.html)| [Ch. 10 in R for Data Science](http://r4ds.had.co.nz/tibbles.html)|  | TBD | [Tibbles]() |
+  | [String Analysis](http://r4ds.had.co.nz/strings.html)|[Ch. 14 in R for Data Science](http://r4ds.had.co.nz/strings.html) |  | TBD| [String Analysis I]()|
+   | [String Analysis 2](http://r4ds.had.co.nz/strings.html)|[Ch. 14 in R for Data Science](http://r4ds.had.co.nz/strings.html) | | TBD | [String Analysis II]() |
+  | [Factors](http://r4ds.had.co.nz/factors.html) | [Ch. 15 in R for Data Science](http://r4ds.had.co.nz/factors.html)| | | Factors |
   
   
   **Data Wrangling and Plotting**
@@ -69,7 +69,7 @@ Overall, this course will be split into two main parts: (1) learning the basics 
    | Topic | Reading | Assignment | Due Date | In Class Code |
    | :---  | :---:  | :---:  | :---:  | :---: |
    | [Input and Output]() | | | | [Input and Output]() |
-   | [Plotting in R]() | | [HW 8]() | Friday, 10/27| [Plotting 1]()|
+   | [Plotting in R]() | | | Friday, 10/27| [Plotting 1]()|
    | [Wrangling Data]() | | | |
    
  
@@ -94,12 +94,12 @@ Overall, this course will be split into two main parts: (1) learning the basics 
 |:--- | :---  | :---:  |
 |[CS 1: ]() | | | 
 |[CS 2: ]() | | |
-|[CS 3: ]()| ||
+|[CS 3: ]()| | |
 
 ### Final Project
 | Description | Due Date |
 |:--- | :---  |
-|[Project Signup]() | October XXtt at 9:00 AM|
+|[Project Signup]() | October XXth at 9:00 AM|
 |[Final Project Description]() | November XXth at 9:00 AM|
 
 

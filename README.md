@@ -48,8 +48,8 @@ Overall, this course will be split into two main parts: (1) learning the basics 
 | Topic | Reading | Assignment | Due Date | In Class Code |
  | :---  | :---:  | :---:  | :---:  | :---: |
  | [Introduction - History of Data Science]() | [Ch. 1 What is Data Science?](https://www.safaribooksonline.com/library/view/doing-data-science/9781449363871/ch01.html)|  | Thursday, 8/24| |
- | [R and RStudio]() | |  | TBD| First Code |
- | [Packages and RMarkdown]()  | | | TBD | First Knit |
+ | [R and RStudio]() | |  |  | First Code |
+ | [Packages and RMarkdown]()  | | |  | First Knit |
   
   
  **Data Structures in R**
@@ -58,9 +58,9 @@ Overall, this course will be split into two main parts: (1) learning the basics 
   | :---  | :---:  | :---:  | :---:  | :---: |
   | [Vectors, Matrices, and Arrays]() | | | TBD | [Data Structures I]() [Data Structures II]()|
   | [Lists and Data Frames]() | [Ch. 20 in R for Data Science](http://r4ds.had.co.nz/vectors.html)| | | [Data Structures III]() |
-  | [Tibbles](http://r4ds.had.co.nz/tibbles.html)| [Ch. 10 in R for Data Science](http://r4ds.had.co.nz/tibbles.html)|  | TBD | [Tibbles]() |
-  | [String Analysis](http://r4ds.had.co.nz/strings.html)|[Ch. 14 in R for Data Science](http://r4ds.had.co.nz/strings.html) |  | TBD| [String Analysis I]()|
-   | [String Analysis 2](http://r4ds.had.co.nz/strings.html)|[Ch. 14 in R for Data Science](http://r4ds.had.co.nz/strings.html) | | TBD | [String Analysis II]() |
+  | [Tibbles](http://r4ds.had.co.nz/tibbles.html)| [Ch. 10 in R for Data Science](http://r4ds.had.co.nz/tibbles.html)|  |  | [Tibbles]() |
+  | [String Analysis](http://r4ds.had.co.nz/strings.html)|[Ch. 14 in R for Data Science](http://r4ds.had.co.nz/strings.html) |  | | [String Analysis I]()|
+   | [String Analysis 2](http://r4ds.had.co.nz/strings.html)|[Ch. 14 in R for Data Science](http://r4ds.had.co.nz/strings.html) | |  | [String Analysis II]() |
   | [Factors](http://r4ds.had.co.nz/factors.html) | [Ch. 15 in R for Data Science](http://r4ds.had.co.nz/factors.html)| | | Factors |
   
   
@@ -69,7 +69,7 @@ Overall, this course will be split into two main parts: (1) learning the basics 
    | Topic | Reading | Assignment | Due Date | In Class Code |
    | :---  | :---:  | :---:  | :---:  | :---: |
    | [Input and Output]() | | | | [Input and Output]() |
-   | [Plotting in R]() | | | Friday, 10/27| [Plotting 1]()|
+   | [Plotting in R]() | | | | [Plotting 1]()|
    | [Wrangling Data]() | | | |
    
  

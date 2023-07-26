@@ -1,0 +1,131 @@
+\documentclass[10pt, oneside]{article}
+\usepackage{amsmath,amssymb,graphicx}
+\usepackage[margin=0.50in, paperwidth=8.5in, paperheight=11in]{geometry}
+\usepackage{verbatim}
+\usepackage{amsfonts}
+\usepackage[usenames]{color}
+\usepackage{hyperref}
+\usepackage{amsthm}
+\usepackage{titlesec}
+\titleformat{\section}{\bfseries}{\thesection}{1em}{}
+\begin{document}
+	\begin{center} \Large{\underline{Intro to Data Science}} \end{center} 
+\begin{center} \Large{BSDS 100} \end{center} 
+\begin{center} \Large{Fall 2023} \end{center} 
+\begin{table}[ht]
+\begin{tabular}{lllll}
+ Lecture:&  TR~~12:45  - 2:30  PM		 &   \\ 
+ Instructor: & Cody Carroll&  \\
+ Email:  & cjcarroll@usfca.edu & \\ 
+ Office Hours: & TBD (Office Hours Start Week 2)\\
+ Office: &  HR 119F\\ 
+\end{tabular}
+\end{table}
+
+\thispagestyle{empty}
+\section*{Course Learning Outcomes}
+By the end of this course, you will be able to
+
+\begin{itemize}
+	\item[-] Proficiently wrangle, manipulate, and explore data using the R programming language
+	\item[-] Utilize contemporary R libraries including ggplot2, tibble, tidyr, dplyr, knitr, and stringr
+	\item[-] Visualize, present, and communicate trends in a variety of data types
+	\item[-] Communicate results using R markdown and R Shiny
+	\item[-] Formulate data-driven hypotheses using exploratory data analysis and introductory model building techniques
+\end{itemize}
+
+
+
+\section*{Assessment}
+The focus of this course will be to provide you with the basic techniques available for making informed, data-driven decisions using the R programming language. This is not a statistics course, but will provide you the intuition to make hypotheses about complex questions through visualization, wrangling, manipulation, and exploration of data. The course will be graded based on the following components:
+
+\begin{itemize}
+	\item[-] Attendance (20\%): You will lose 2\% of this grade for every class you miss.
+	\item[-] Assignments (40\%): You will be assigned a computational assignment to be completed using RStudio and the package knitr regularly throughout class.
+	\item[-] Case Studies (20\%): You will be assigned applied case studies throughout the class that are to be completed using RStudio.
+	\item[-] Final Project (20\%): The final project will be a computational case study that brings together the techniques learned throughout the semester. The description for this project will be provided towards the mid point of the semester.
+	\item[-] Extra Credit (+5\%): Create a well-organized database of all R functions that you use throughout the semester. These include those mentioned in lectures, those introduced in homework, etc. Along with each function, give a brief description that details the use of the function. Also, organize these functions into categories according to their use.
+\end{itemize}
+
+Students are encouraged to work together on the assignments, but each student must turn in their own original work.\textit{ \textbf{ If there is evidence that the work turned in is not original work, which includes copying another student's homework or using any solutions found online, all credit for that homework set will be forfeited. No late assignments or projects will be accepted.}}\\
+
+Regrade Policy: You have \textbf{7 days} after a graded assignment is returned (assignments, projects) to contest a grade.  After this time, the item may not be considered.  If the 7 day period extends beyond the final exam date, the grade must be contested before the final exam.
+
+\newpage
+\thispagestyle{empty}
+
+
+\noindent \textbf{Final Grade Guidelines}
+\begin{table}[ht]
+	\small
+	\begin{tabular}{ll}
+		Course Grade Cutoffs*: & \\
+		A+	&97 - 100+ \\
+		A	  &93 - 97 \\
+		A-	&90 - 93 \\
+		B+	&87 - 90 \\
+		B	  &83 - 87 \\
+		B-	&80 - 83 \\
+		C+	&77 - 80 \\
+		C	  &73 - 77 \\
+		C-	&70 - 73 \\
+		D+	&67 - 70 \\
+		D	  &63 - 67 \\
+		D-	&60 - 63 \\
+		F	  &0 - 60 \\ 
+	\end{tabular}
+\end{table}
+
+
+\noindent *** Cutoffs are approximate.  Instructor reserves the right to alter any grade cutoffs.  Final decisions will not be made until all assignments have been turned in and graded. 
+
+
+\section*{Academic Integrity}
+As a Jesuit institution committed to cura personalis - the care and education of the whole person - USF has an obligation to embody and foster the values of honesty and integrity. USF upholds the standards of honesty and integrity from all members of the academic community. All students are expected to know and adhere to the University’s Honor Code. You can find the full text of the code online at www.usfca.edu/academic integrity. The policy covers:
+– Plagiarism: intentionally or unintentionally representing the words or ideas of another person as your own; failure to properly cite references; manufacturing references.
+– Working with another person when independent work is required.
+– Submission of the same paper in more than one course without the specific permission of each instructor.
+– Submitting a paper written by another person or obtained from the internet.
+– The penalties for violation of the policy may include a failing grade on the assignment, a failing grade in the course, and/or a referral to the Academic Integrity Committee.
+
+\section*{Students with Disabilities}
+If you are a student with a disability or disabling condition, or if you think you may have a disability, please contact USF Student Disability Services (SDS) at 415 422-2613 within the first week of class, or immediately upon onset of disability, to speak with a disability specialist. If you are determined eligible for reasonable accommodations, please meet with your disability specialist so they can arrange to have your accommodation letter sent to me, and we will discuss your needs for this course. For more information, please visit: http://www.usfca.edu/sds or call (415) 422-2613.
+
+\section*{Behavioral Expectations}
+All students are expected to behave in accordance with the Student Conduct Code and other University policies (see http://www.usfca.edu/fogcutter/). Open discussion and disagreement is encouraged when done respectfully and in the spirit of academic discourse. There are also a variety of behaviors that, while not against a specific University policy, may create disruption in this course. Students whose behavior is disruptive or who fail to comply with the instructor may be dismissed from the class for the remainder of the class period and may need to meet with the instructor or Dean prior to returning to the next class period. If necessary, referrals may also be made to the Student Conduct process for violations of the Student Conduct Code.
+
+\section*{Learning \& Writing Center}
+The Learning \& Writing Center provides assistance to all USF students in pursuit of academic success. Peer tutors provide regular review and practice of course materials in the subjects of Math, Science, Business, Economics, Nursing and Languages. https://tutortrac.usfca.edu. Students may also take advantage of writing support provided by Rhetoric and Language Department instructors and academic study skills support provided by Learning Center professional staff. For more information about these services contact the Learning \& Writing Center at (415) 422- 6713, email: lwc@usfca.edu or stop by our office in Cowell 215. Information can also be found on our website at www.usfca.edu/lwc.
+Counseling and Psychological Services
+Our diverse staff offers brief individual, couple, and group counseling to student members of our community. CAPS services are confidential and free of charge. Call 415-422-6352 for an initial consultation appointment. Having a crisis at 3 AM? We are still here for you. Telephone consultation through CAPS After Hours is available between the hours of 5:00 PM to 8:30 AM; call the above number and press 2.
+
+\section*{Confidentiality, Mandatory Reporting, and Sexual Assault}
+
+As an instructor, one of my responsibilities is to help create a safe learning environment on our campus. I also have a mandatory reporting responsibility related to my role as a faculty member. I am required to share information regarding sexual misconduct or information about a crime that may have occurred on USFs campus with the University. Here are other resources:\\
+– To report any sexual misconduct, students may visit Anna Bartkowski (UC 5th floor) or see many other options by visiting our website: www.usfca.edu/student life/safer.\\
+– Students may speak to someone confidentially, or report a sexual assault confidentially by contacting Counseling and Psychological Services at 415-422-6352.\\
+– To find out more about reporting a sexual assault at USF, visit USF’s Callisto website at: www.usfca.callistocampus.org.\\
+– For an off-campus resource, contact San Francisco Women Against Rape (SFWAR) (415)647-7273 (www.sfwar.org). \\
+
+\section*{Student Accounts - Last day to withdraw with tuition reversal}
+Students who wish to have the tuition charges reversed on their student account should withdraw from the course(s) by the end of the business day on the last day to withdraw with tuition credit (census date) for the applicable course(s) in which the student is enrolled. Please note that the last day to withdraw with tuition credit may vary by course. The last day to withdraw with tuition credit (census date) listed in the Academic Calendar is applicable only to courses which meet for the standard 15-week semester. To find what the last day to withdraw with tuition credit is for a specific course, please visit the Online Class Schedule at www.usfca.edu/schedules.
+
+\section*{Ability to Change Syllabus} 
+I will do my best as an instructor to stick to the guidelines established in this syllabus throughout the year. I do, however, have the right to change components of this syllabus at my own discretion if I deem such changes as necessary.
+
+
+%\section*{Quarter Dates to Remember}
+%Wednesday, September  $27^{th}$ : Lecture Begins\\
+%Tuesday, October $10^{th}$ : Drop day for 10-day-drop courses.\\
+%Thursday, October $12^{th}$ : Last day for wait lists (wait lists are deleted on the $13^{th}$).\\
+%Friday, October $20^{th}$ : Exam I \\
+%Tuesday, October $24^{th}$ : Drop day for 20-day-drop courses.\\
+%Friday, October $27^{th}$ : Project I due\\
+%Friday, November $10^{th}$ : No class - Veterans Day \\
+%Friday, November $17^{th}$ : Exam II \\
+%Thursday, November $23^{rd}$ and Friday, November $24^{rd}$  : No class - Thanksgiving \\
+%Monday, November $27^{th}$ : Project II due\\
+%Friday, December $8^{th}$ : Last day of lecture \\
+%Tuesday, December $12^{th}$ : Final Exam
+\thispagestyle{empty}
+\end{document}

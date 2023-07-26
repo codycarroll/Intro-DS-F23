@@ -47,7 +47,7 @@ Overall, this course will be split into two main parts: (1) learning the basics 
 
 | Topic | Reading | Assignment | Due Date | In Class Code |
  | :---  | :---:  | :---:  | :---:  | :---: |
- | [Introduction - History of Data Science]() | [Ch. 1 What is Data Science?](https://www.safaribooksonline.com/library/view/doing-data-science/9781449363871/ch01.html)|  | Thursday, 8/24| |
+ | [Introduction - A History of Data Science](https://github.com/codycarroll/Intro-DS-F23/blob/main/Lectures/Lecture%201%20Introduction.pdf) | [Ch. 1 What is Data Science?](https://www.safaribooksonline.com/library/view/doing-data-science/9781449363871/ch01.html)|  | Thursday, 8/24| |
  | [R and RStudio]() | |  |  | First Code |
  | [Packages and RMarkdown]()  | | |  | First Knit |
   

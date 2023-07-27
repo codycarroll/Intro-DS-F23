@@ -34,10 +34,6 @@ The focus of this course will be to provide you with the basic techniques availa
 - **Final Project** (20%): The final project will be a computational case study that brings together the techniques learned throughout the semester. The description for this project will be provided towards the mid point of the semester.
 - **Extra Credit** (+5%): Create a *well-organized* database of *all* R functions that you use throughout the semester. These include those mentioned in lectures, those introduced in homework, etc. Along with each function, give a brief description that details the use of the function. Also, organize these functions into categories according to their use.
 
-### Data Science Links and News
-
-- **Undergraduate Research in Statistics and Data Science**: [Article from Amstat News](http://magazine.amstat.org/blog/2017/09/01/undergraduateexpectations/)
-
 ### Schedule
 
 Overall, this course will be split into two main parts: (1) learning the basics of how to code in R and (2) performing data analysis on real case studies and examples using data science techniques in R.
@@ -112,3 +108,53 @@ Overall, this course will be split into two main parts: (1) learning the basics 
 - Thursday, November 23rd - Thanksgiving Holiday (**no class**)
 - Tuesday, December 5th - Last day of class
 - Tuesday, December 7th - Review day
+
+## Additional References
+
+### Data Science
+
+* [Data Manipulation with R](https://link.springer.com/book/10.1007%2F978-0-387-74731-6) by Spector.
+* [Data Science in R](http://www.crcnetbase.com/doi/book/10.1201/b18325) by Nolan & Temple Lang.
+* [Computational and Inferential Thinking](https://www.inferentialthinking.com/) by Adhikari & DeNero. The textbook for UC Berkeley's lower-div data science class.
+
+### Visualization
+
+* [ggplot2: Elegant Graphics for Data Analysis](https://link.springer.com/book/10.1007%2F978-3-319-24277-4) by Wickham. The official reference for ggplot2.
+* [R Graphics Cookbook](http://www.cookbook-r.com/Graphs/) ([library](http://proquest.safaribooksonline.com/9781449363086)) by Chang. Examples for ggplot2.
+* [R Graph Gallery](http://www.r-graph-gallery.com/). Examples of graphs you can make in R, with code.
+* [R Data Visualization Cheat Sheets.](http://www.r-graph-gallery.com/portfolio/r-dataviz-cheatsheet/)
+* The Elements of Graphing Data by Cleveland. This is a classic about how to design graphics.
+* Visualizing Data by Cleveland. Another classic, about how to choose the right graphic for your data. Complements "The Elements of Graphing Data".
+* [Color Oracle](https://colororacle.org/), a free colorblindness simulator for Windows, OS X, and Linux.
+* [Color Brewer 2](http://colorbrewer2.org/), a web app to help you choose colors.
+
+### Statistics
+
+* [Introductory Statistics with Randomization and Simulation](https://www.openintro.org/stat/textbook.php?stat_book=isrs) by OpenIntro.
+* [Introduction to Statistical Learning](http://www-bcf.usc.edu/~gareth/ISL/) by James, Witten, Hastie & Tibshirani. About machine learning. A gentler introduction than The Elements.
+* [The Elements of Statistical Learning](https://web.stanford.edu/~hastie/ElemStatLearn/) by Hastie, Tibshirani, & Friedman. About machine learning. A more detailed introduction than ISLR.
+
+
+### Other R Resources
+
+* [UC Davis' Statistical DS Course by Nick Ulle](https://github.com/nick-ulle/2018-ucdavis-sta141a/)
+* [The R Inferno](http://www.burns-stat.com/documents/books/the-r-inferno/) by Burns. About the difficult and confusing parts of R.
+* [UC Berkeley's STA 133 Lecture Notes](https://www.stat.berkeley.edu/classes/s133/schedule.html).
+* [RStudio Cheat Sheets](https://www.rstudio.com/resources/cheatsheets/).
+
+
+### Inspiration
+
+* [FlowingData](http://flowingdata.com/)
+* [FiveThirtyEight](http://fivethirtyeight.com/)
+* [The Guardian Data Blog](https://www.theguardian.com/data)
+* [BuzzFeed Datasets & Code](https://github.com/buzzfeednews/everything)
+* [Information is Beautiful](http://www.informationisbeautiful.net/)
+* [Computational Story Lab](http://www.uvm.edu/storylab/)
+
+### News
+
+* [R Weekly](https://rweekly.org/). About R.
+* [R-bloggers](https://www.r-bloggers.com/). About R.
+* [Hacker News](https://news.ycombinator.com/). About the tech industry.
+* [Data Tau](https://www.datatau.com/). About the DS industry.

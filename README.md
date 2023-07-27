@@ -115,24 +115,24 @@ Overall, this course will be split into two main parts: (1) learning the basics 
 
 * [Data Manipulation with R](https://link.springer.com/book/10.1007%2F978-0-387-74731-6) by Spector.
 * [Data Science in R](http://www.crcnetbase.com/doi/book/10.1201/b18325) by Nolan & Temple Lang.
-* [Computational and Inferential Thinking](https://www.inferentialthinking.com/) by Adhikari & DeNero. The textbook for UC Berkeley's lower-div data science class.
+* [Computational and Inferential Thinking](https://www.inferentialthinking.com/) by Adhikari & DeNero. 
 
 ### Visualization
 
 * [ggplot2: Elegant Graphics for Data Analysis](https://link.springer.com/book/10.1007%2F978-3-319-24277-4) by Wickham. The official reference for ggplot2.
 * [R Graphics Cookbook](http://www.cookbook-r.com/Graphs/) ([library](http://proquest.safaribooksonline.com/9781449363086)) by Chang. Examples for ggplot2.
-* [R Graph Gallery](http://www.r-graph-gallery.com/). Examples of graphs you can make in R, with code.
+* [R Graph Gallery](http://www.r-graph-gallery.com/). 
 * [R Data Visualization Cheat Sheets.](http://www.r-graph-gallery.com/portfolio/r-dataviz-cheatsheet/)
 * The Elements of Graphing Data by Cleveland. 
 * Visualizing Data by Cleveland. 
-* [Color Oracle](https://colororacle.org/), a free colorblindness simulator for Windows, OS X, and Linux.
-* [Color Brewer 2](http://colorbrewer2.org/), a web app to help you choose colors.
+* [Color Oracle](https://colororacle.org/), a free colorblindness simulator.
+* [Color Brewer 2](http://colorbrewer2.org/), a web app to help choose colors.
 
 ### Statistics
 
 * [Introductory Statistics with Randomization and Simulation](https://www.openintro.org/stat/textbook.php?stat_book=isrs) by OpenIntro.
-* [Introduction to Statistical Learning](http://www-bcf.usc.edu/~gareth/ISL/) by James, Witten, Hastie & Tibshirani. About machine learning. A gentler introduction than The Elements.
-* [The Elements of Statistical Learning](https://web.stanford.edu/~hastie/ElemStatLearn/) by Hastie, Tibshirani, & Friedman. About machine learning. A more detailed introduction than ISLR.
+* [Introduction to Statistical Learning](http://www-bcf.usc.edu/~gareth/ISL/) by James, Witten, Hastie & Tibshirani. 
+* [The Elements of Statistical Learning](https://web.stanford.edu/~hastie/ElemStatLearn/) by Hastie, Tibshirani, & Friedman. 
 
 
 ### Other R Resources
@@ -143,18 +143,8 @@ Overall, this course will be split into two main parts: (1) learning the basics 
 * [RStudio Cheat Sheets](https://www.rstudio.com/resources/cheatsheets/).
 
 
-### Inspiration
-
-* [FlowingData](http://flowingdata.com/)
-* [FiveThirtyEight](http://fivethirtyeight.com/)
-* [The Guardian Data Blog](https://www.theguardian.com/data)
-* [BuzzFeed Datasets & Code](https://github.com/buzzfeednews/everything)
-* [Information is Beautiful](http://www.informationisbeautiful.net/)
-* [Computational Story Lab](http://www.uvm.edu/storylab/)
-
 ### News
 
 * [R Weekly](https://rweekly.org/). About R.
 * [R-bloggers](https://www.r-bloggers.com/). About R.
-* [Hacker News](https://news.ycombinator.com/). About the tech industry.
 * [Data Tau](https://www.datatau.com/). About the DS industry.

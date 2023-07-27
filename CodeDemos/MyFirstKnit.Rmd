@@ -1,0 +1,32 @@
+---
+title: "knitting with R Markdown"
+author: "Cody Carroll"
+date: "Fall 2023"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+This is an R Markdown document (.Rmd). R Markdown files are useful for writing up reports; specifically if you want to integrate code and commentary or analysis. To display R code inside an .Rmd doc, we create a code chunk:
+
+```{r, eval = TRUE, echo = TRUE}
+print("Hello World")
+```
+
+The options  `eval = TRUE` and `echo = TRUE` tell the .Rmd doc to run the code chunk and print the output in the .Rmd file. 
+
+
+Next, I'll do the same as above except I will tell R **not** to print out my input:
+```{r, echo = FALSE, eval = TRUE}
+print("Hello World")
+```
+
+Next let's generate 1000 observations from a N(0,1) distribution and print the histogram of the data with 100 bins.
+
+```{r, echo = TRUE, eval = TRUE}
+data <- rnorm(n = 1000, mean = 0, sd = 1)
+hist(data, n = 100)
+```
+
+Finally, to convert this entire .Rmd doc to a .pdf or .html file, click "Knit>Knit to pdf" or "Knit>Knit to html" at the top of the source file window.

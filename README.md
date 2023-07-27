@@ -8,7 +8,7 @@
 
 **Office Hours**: TBD
 
-**Book**: [R for Data Science](http://r4ds.had.co.nz/index.html) by Hadley Wickham and Garret Grolemund
+**Book**: [R for Data Science](http://r4ds.had.co.nz/index.html) by Hadley Wickham and Garrett Grolemund
 
 **Syllabus**: [Link](https://github.com/codycarroll/Intro-DS-F23/blob/main/Syllabus/BSDS100-Fall-2023-Syllabus.pdf)
 

@@ -137,7 +137,7 @@ Overall, this course will be split into two main parts: (1) learning the basics 
 
 ### Other R Resources
 
-* [UC Davis' Statistical DS Course by Nick Ulle](https://github.com/nick-ulle/2018-ucdavis-sta141a/)
+* [UC Davis' Statistical DS Course ](https://github.com/nick-ulle/2018-ucdavis-sta141a/) by Nick Ulle.
 * [The R Inferno](http://www.burns-stat.com/documents/books/the-r-inferno/) by Burns. About the difficult and confusing parts of R.
 * [UC Berkeley's STA 133 Lecture Notes](https://www.stat.berkeley.edu/classes/s133/schedule.html).
 * [RStudio Cheat Sheets](https://www.rstudio.com/resources/cheatsheets/).

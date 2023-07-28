@@ -64,8 +64,8 @@ Overall, this course will be split into two main parts: (1) learning the basics 
   
    | Topic | Reading | Assignment | Due Date | In Class Code |
    | :---  | :---:  | :---:  | :---:  | :---: |
-   | [Input and Output]() | | | | [Input and Output]() |
-   | [Plotting in R]() | | | | [Plotting 1]()|
+   | [Input and Output]() | | | | [Input and Output](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/Input_Output.R) |
+   | [Plotting in R]() | | | | [ggplot](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/ggplot1.R)|
    | [Wrangling Data]() | | | |
    
  
@@ -74,8 +74,8 @@ Overall, this course will be split into two main parts: (1) learning the basics 
  
  | Topic | Reading | Assignment | Due Date | In Class Code |
  | :---  | :---:  | :---:  | :---:  | :---: |
- | [Control Flow]()|[Ch. 19 in R for Data Science](http://r4ds.had.co.nz/vectors.html) | | | [Functions 1]()|
- | [Writing Functions]()| [Ch. 19 in R for Data Science](http://r4ds.had.co.nz/vectors.html)| | | [Functions 2]()|
+ | [Control Flow]()|[Ch. 19 in R for Data Science](http://r4ds.had.co.nz/vectors.html) | | | [Functions 1](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/Functions1.R)|
+ | [Writing Functions]()| [Ch. 19 in R for Data Science](http://r4ds.had.co.nz/vectors.html)| | | [Functions 2](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/Functions2.R)|
  | [Functionals]()| [Ch. 18 in R for Data Science](http://r4ds.had.co.nz/vectors.html)| | | 
  
  **Statistical Modeling in R**

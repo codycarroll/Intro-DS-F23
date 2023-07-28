@@ -50,7 +50,7 @@ Overall, this course will be split into two main parts: (1) learning the basics 
   
  **Data Structures in R**
   
- | Topic | Reading | Assignment | Due Date | In Class Code |
+ | Topic | Reading | Lab Assignment (HW) | Due Date | Code Demos|
   | :---  | :---:  | :---:  | :---:  | :---: |
   | [Vectors, Matrices, and Arrays]() | | | TBD | [Data Structures I](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/Data_Structures1.R) & [Data Structures II](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/Data_Structures2.R)|
   | [Lists and Data Frames]() | [Ch. 20 in R for Data Science](http://r4ds.had.co.nz/vectors.html)| | | [Data Structures III](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/Data_Structures3.R) |

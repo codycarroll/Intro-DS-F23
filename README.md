@@ -54,9 +54,9 @@ Overall, this course will be split into two main parts: (1) learning the basics 
   | :---  | :---:  | :---:  | :---:  | :---: |
   | [Vectors, Matrices, and Arrays]() | | | TBD | [Data Structures I](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/Data_Structures1.R) & [Data Structures II](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/Data_Structures2.R)|
   | [Lists and Data Frames]() | [Ch. 20 in R for Data Science](http://r4ds.had.co.nz/vectors.html)| | | [Data Structures III](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/Data_Structures3.R) |
-  | [Tibbles](http://r4ds.had.co.nz/tibbles.html)| [Ch. 10 in R for Data Science](http://r4ds.had.co.nz/tibbles.html)|  |  | [Tibbles]() |
-  | [String Analysis](http://r4ds.had.co.nz/strings.html)|[Ch. 14 in R for Data Science](http://r4ds.had.co.nz/strings.html) |  | | [String Analysis I]()|
-   | [String Analysis 2](http://r4ds.had.co.nz/strings.html)|[Ch. 14 in R for Data Science](http://r4ds.had.co.nz/strings.html) | |  | [String Analysis II]() |
+  | [Tibbles](http://r4ds.had.co.nz/tibbles.html)| [Ch. 10 in R for Data Science](http://r4ds.had.co.nz/tibbles.html)|  |  | [Tibbles](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/tibbles.R) |
+  | [String Analysis](http://r4ds.had.co.nz/strings.html)|[Ch. 14 in R for Data Science](http://r4ds.had.co.nz/strings.html) |  | | [String Analysis I](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/Strings1.R)|
+   | [String Analysis 2](http://r4ds.had.co.nz/strings.html)|[Ch. 14 in R for Data Science](http://r4ds.had.co.nz/strings.html) | |  | [String Analysis II](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/Strings2.R) |
   | [Factors](http://r4ds.had.co.nz/factors.html) | [Ch. 15 in R for Data Science](http://r4ds.had.co.nz/factors.html)| | | Factors |
   
   

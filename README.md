@@ -123,8 +123,6 @@ Overall, this course will be split into two main parts: (1) learning the basics 
 * [R Graphics Cookbook](http://www.cookbook-r.com/Graphs/) ([library](http://proquest.safaribooksonline.com/9781449363086)) by Chang. Examples for ggplot2.
 * [R Graph Gallery](http://www.r-graph-gallery.com/). 
 * [R Data Visualization Cheat Sheets.](http://www.r-graph-gallery.com/portfolio/r-dataviz-cheatsheet/)
-* The Elements of Graphing Data by Cleveland. 
-* Visualizing Data by Cleveland. 
 * [Color Oracle](https://colororacle.org/), a free colorblindness simulator.
 * [Color Brewer 2](http://colorbrewer2.org/), a web app to help choose colors.
 

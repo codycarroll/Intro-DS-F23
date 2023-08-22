@@ -27,8 +27,11 @@
 # store x as 1 through 10
 x  =  1:10
 
+x
+
 # store y as x squared
 y  =  x^2
+
 
 # very simple plot of y against x 
 plot(y ~ x)
@@ -42,6 +45,9 @@ plot(y ~ x, type = "l", col = "blue", main = "y vs. x")
 
 #what happens when I try to do something weird?
 z  =  -3
+sqrt(z)
+
+z  =  complex(real = -3)
 sqrt(z)
 
 #sneak peek: data.frames
@@ -62,8 +68,6 @@ install.packages("ggplot2")
 
 ??ggplot2
 
-#the above shows that the ergm function is available in the
-# ergm package (which means that I've installed it before)
 
 #so, I just need to load that package to my current R session
 # for this, I can use library() or require()

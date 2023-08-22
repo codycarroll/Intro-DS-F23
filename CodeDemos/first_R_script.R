@@ -54,11 +54,11 @@ df
 #say I wanted to start a "ggplot":
 ggplot(df)
 
-#First, let's install the package fdapace
+#First, let's install the package ggplot2
 install.packages("ggplot2")
 ?ggplot
 
-#note - the above could not find the function ergm
+#note - the above could not find the function ggplot
 
 ??ggplot2
 

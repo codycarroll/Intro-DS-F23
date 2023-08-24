@@ -10,7 +10,7 @@
 #
 # * Label your plots and axes!
 #
-# * Recommended style guide: <http://adv-r.had.co.nz/Style.html>.
+# * Recommended style guide: https://style.tidyverse.org/index.html
 
 
 # Setup

@@ -1,34 +1,34 @@
 #Data Structures 1
 
 #double vector
-double.vector = c(1, 3.14, 99.999)
+double_vector = c(1, 3.14, 99.999)
 
 #integer vector -- L is used to indicate that the preceding number
 #should be stored as an integer
-integer.vector = c(1L, 14L, 23L)
+integer_vector = c(1L, 14L, 23L)
 
 #logical vector -- must be written in caps (TRUE/FALSE) or 
 #shorthand (T/F), normally long form is preferred stylistically
-logical.vector = c(TRUE, FALSE, T, F)
+logical_vector = c(TRUE, FALSE, T, F)
 
 #character vector -- entries must be surrounded by quotations ""
-char.vector = c("this", "is a", "string")
+char_vector = c("this", "is a", "string")
 
 #checking the types of each of these vectors
-typeof(integer.vector)
-typeof(logical.vector)
-typeof(char.vector)
+typeof(integer_vector)
+typeof(logical_vector)
+typeof(char_vector)
 
 #str displays the structure of the object
-str(integer.vector)
-str(logical.vector)
-str(char.vector)
+str(integer_vector)
+str(logical_vector)
+str(char_vector)
 
 #viewing the vectors
-char.vector #output is shown with spaces
+char_vector #output is shown with spaces
 
 #length of the vector
-length(char.vector)
+length(char_vector)
 
 exnum = 3/4
 #note the above does the division, but if you want to keep 

@@ -45,12 +45,12 @@ Overall, this course will be split into two main parts: (1) learning the basics 
  | :---  | :---:  | :---:  | :---:  | :---: |
  | [Introduction - A History of Data Science](https://github.com/codycarroll/Intro-DS-F23/blob/main/Lectures/Lecture%201%20Introduction.pdf) | [Ch. 1 What is Data Science?](https://www.safaribooksonline.com/library/view/doing-data-science/9781449363871/ch01.html)| Anonymous Class Survey (Canvas) | Friday, 8/25| |
  | [R and RStudio](https://github.com/codycarroll/Intro-DS-F23/blob/main/Lectures/R%20and%20RStudio.pdf) | |  |  | [First Coding Demo](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/first_R_script.R) |
- | [Packages and RMarkdown](https://github.com/codycarroll/Intro-DS-F23/blob/main/Lectures/R%20Markdown.pdf)  | | |  | [First Knitting Demo](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/MyFirstKnit.Rmd) |
+ | [Packages and RMarkdown](https://github.com/codycarroll/Intro-DS-F23/blob/main/Lectures/R%20Markdown.pdf)  | | | [HW1](https://github.com/codycarroll/Intro-DS-F23/blob/main/Assignments/HW1.pdf) | [First Knitting Demo](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/MyFirstKnit.Rmd) |
   
   
  **Data Structures in R**
   
- | Topic | Reading | Lab Assignment (HW) | Due Date | Code Demos|
+ | Topic | Reading | Lab Assignment / HW  | Due Date | Code Demos|
   | :---  | :---:  | :---:  | :---:  | :---: |
   | [Vectors, Matrices, and Arrays](https://github.com/codycarroll/Intro-DS-F23/blob/main/Lectures/Data%20Structures%20I.pdf) | [Ch. 20 in R for Data Science](http://r4ds.had.co.nz/vectors.html) | | TBD | [Data Structures I](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/Data_Structures1.R) & [Data Structures II](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/Data_Structures2.R)|
   | [Lists and Data Frames]() | | | | [Data Structures III](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/Data_Structures3.R) |

@@ -45,7 +45,7 @@ Overall, this course will be split into two main parts: (1) learning the basics 
  | :---  | :---:  | :---:  | :---:  | :---: |
  | [Introduction - A History of Data Science](https://github.com/codycarroll/Intro-DS-F23/blob/main/Lectures/Lecture%201%20Introduction.pdf) | [Ch. 1 What is Data Science?](https://www.safaribooksonline.com/library/view/doing-data-science/9781449363871/ch01.html)| Anonymous Class Survey (Canvas) | Friday, 8/25| |
  | [R and RStudio](https://github.com/codycarroll/Intro-DS-F23/blob/main/Lectures/R%20and%20RStudio.pdf) | |  |  | [First Coding Demo](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/first_R_script.R) |
- | [Packages and RMarkdown](https://github.com/codycarroll/Intro-DS-F23/blob/main/Lectures/R%20Markdown.pdf)  | | | [HW1](https://github.com/codycarroll/Intro-DS-F23/blob/main/Assignments/HW1.pdf) | [First Knitting Demo](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/MyFirstKnit.Rmd) |
+ | [Packages and RMarkdown](https://github.com/codycarroll/Intro-DS-F23/blob/main/Lectures/R%20Markdown.pdf)  | |  [HW1](https://github.com/codycarroll/Intro-DS-F23/blob/main/Assignments/HW1.pdf) | Friday, 9/1 | [First Knitting Demo](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/MyFirstKnit.Rmd) |
   
   
  **Data Structures in R**

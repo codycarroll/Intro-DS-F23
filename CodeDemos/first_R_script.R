@@ -98,3 +98,20 @@ ls()
 
 #clear the console
 cat("\014")
+
+
+#install knitr
+
+install.packages("knitr")
+
+library(knitr)
+
+install.packages("rmarkdown")
+
+library(rmarkdown)
+
+
+
+
+
+

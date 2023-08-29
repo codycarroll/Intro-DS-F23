@@ -1,6 +1,6 @@
 ##Playing around with coercion in R
 
-trial1 <- c(TRUE, 3.14, 2L)
+trial1 = c(TRUE, 3.14, 2L)
 class(trial1) #check the type
 
 typeof(trial1) #double as it is more flexible than logical and integers
@@ -10,7 +10,7 @@ trial1 * FALSE #multiplies each entry by 0
 
 
 #user coercion
-trial2 <- c(0, 1, -14, 3.14)
+trial2 = c(0, 1, -14, 3.14)
 #create a logical out of this
 as.logical(trial2) #any number aside from 0 will be treated as TRUE
 
@@ -43,13 +43,13 @@ trial2[trial2 == 3] #returns "numeric(0)"
 #trying the rep() and seq() functions
 
 #example - grid of numbers between 0 and 1
-grid <- seq(from = 0, to = 1, by = 0.1)
+grid = seq(from = 0, to = 1, by = 0.1)
 
 #equivalent to the following:
-grid <- seq(0, 1, 0.1)
+grid = seq(0, 1, 0.1)
 
 #we can go more granular here
-grid_small <- seq(0, 1, 0.001)
+grid_small = seq(0, 1, 0.001)
 
 #repeating values with rep()
 rep(0.1, 10)
@@ -75,7 +75,7 @@ seq(0, -3, -.5)
 
 
 #the names attribute
-named_vec1 <- c("James" = 3.14, "Vi" = 2, "Jeremiah" = 7)
+named_vec1 = c("James" = 3.14, "Vi" = 2, "Jeremiah" = 7)
 
 named_vec1 + 3
 
@@ -84,21 +84,21 @@ named_vec1[names(named_vec1) == "James"]
 named_vec1[names(named_vec1) == "Jeremiah"]
 
 #creating matrices out of vectors
-mat1 <- matrix(1:10, nrow = 2, ncol = 5)
+mat1 = matrix(1:10, nrow = 2, ncol = 5)
 #importantly, this by Default will stack by columns
 
 #stack by rows instead, use byrow = TRUE
-mat2 <- matrix(1:10, nrow = 2, ncol = 5, byrow = TRUE)
+mat2 = matrix(1:10, nrow = 2, ncol = 5, byrow = TRUE)
 
 #creating a matrix using rbind() and cbind()
-vec1 <- seq(1, 3, 1)
-vec2 <- rep(2, 3)
+vec1 = seq(1, 3, 1)
+vec2 = rep(2, 3)
 
 #stack vectors side by side in columns
-mat3 <- cbind(vec1, vec2)
+mat3 = cbind(vec1, vec2)
 
 #stack vectors on top of one another in rows
-mat4 <- rbind(vec1, vec2)
+mat4 = rbind(vec1, vec2)
 
 #can also rbind or cbind matrices (as long as the dimensions match)
 
@@ -113,7 +113,7 @@ t(mat3)
 rbind(t(mat3), mat4)
 
 #create a simple array with 2 rows, 3 columns, and 2 layers
-array1 <- array(1:12, c(2, 3, 2))
+array1 = array(1:12, c(2, 3, 2))
 
 
 ##Subsetting matrices and arrays

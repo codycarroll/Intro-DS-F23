@@ -1,14 +1,18 @@
 ---
-title: "knitting with R Markdown"
+title: "HW1"
 author: "Cody Carroll"
 date: "Fall 2023"
 output:
-  pdf_document: default
   html_document:
     df_print: paged
+  pdf_document: default
 ---
 
-This is an R Markdown document (.Rmd). R Markdown files are useful for writing up reports; specifically if you want to integrate code and commentary or analysis. To display R code inside an .Rmd doc, we create a code chunk:
+# Question 1 
+a.  I'm interested in applying R and DS to my field which is psychology. 
+b. $y = 2\pi t$ 
+c. In this next chunk I am going to use the function `print()`
+
 
 ```{r, eval = TRUE, echo = TRUE}
 print("Hello World")

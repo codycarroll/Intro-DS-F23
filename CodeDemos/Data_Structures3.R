@@ -1,7 +1,7 @@
 #Lists are useful because we can store **heterogeneous** data:
 # i.e., data of different types, and of different lengths
 
-my_list <- list(c(1, 2, 3), c(T, F), c(3.1415, 9), "abc")
+my_list = list(c(1, 2, 3), c(T, F), c(3.1415, 9), "abc")
 my_list
 
 #note that entries in a list are indexed with double brackets [[ ]]
@@ -19,7 +19,7 @@ str(my_list[1])
 ##try calling matrix rows in a list. Example of recursive
 ## calling
 
-my_list2 <- list(matrix(1:9, nrow = 3), c(T, F, T), "ade")
+my_list2 = list(matrix(1:9, nrow = 3), c(T, F, T), "ade")
 #let's get the second row of the matrix in the first entry
 my_list2[[1]][2,]
 
@@ -29,7 +29,7 @@ my_list2[1:2] #this will be returned as a list
 
 ##naming and calling entries of a list using its name
 
-my_list3 <- list(Matrix = matrix(1:9, nrow = 3), 
+my_list3 = list(Matrix = matrix(1:9, nrow = 3), 
                 Logicals = c(T, T, F),
                 Numeric = c(3.145, 3/4))
 
@@ -75,7 +75,7 @@ ToothGrowth[2, 2]
 
 
 ##Creating our own data frame
-df1 <- data.frame(Logicals = c(T, F, T, F), Age = c(21, 17, 32, 81))
+df1 = data.frame(Logicals = c(T, F, T, F), Age = c(21, 17, 32, 81))
 str(df1)
 
 
@@ -85,39 +85,39 @@ str(df1)
 # to avoid this, use the argument stringsAsFactors = FALSE.
 
 #Example - 
-dffactors <- data.frame(Logicals = c(T, F, T, F), Age = c(21, 17, 32, 81), 
+dffactors = data.frame(Logicals = c(T, F, T, F), Age = c(21, 17, 32, 81), 
                          Strings = c("my", "name", "is", "bob"))
 str(dffactors) #key point - this treats the Strings variable as a factor
 
-dfstrings <- data.frame(Logicals = c(T, F, T, F), Age = c(21, 17, 32, 81), 
+dfstrings = data.frame(Logicals = c(T, F, T, F), Age = c(21, 17, 32, 81), 
                          Strings = c("my", "name", "is", "bob"),
                          stringsAsFactors = FALSE)
 str(dfstrings) #yay!
 
 #Appending two data frames
 #rough example - appending Strings as a new variable for df1
-Strings <- c("my", "name", "is", "bob")
+Strings = c("my", "name", "is", "bob")
 
-df2trial <- cbind(df1, Strings)
+df2trial = cbind(df1, Strings)
 str(df2trial)
 #note - the strings were treated again as factors
 
 #trial to see if we can avoid that
-df2trial2 <- cbind(df1, Strings, stringsAsFactors = FALSE)
+df2trial2 = cbind(df1, Strings, stringsAsFactors = FALSE)
 #success!!
 
 ##Adding a new observation to the data frame dfstrings
 # the new observation is FALSE, 19, and "lucy"
 
 ##First, the wrong way of doing this
-newdf_wrong <- rbind(dfstrings, c(FALSE, 19, "lucy"))
+newdf_wrong = rbind(dfstrings, c(FALSE, 19, "lucy"))
 str(newdf_wrong)
 #the issue is that the first vector all got coerced to be a character,
 # and then each column of the data frame subsequently got coerced to characters!
 
 
 #To avoid coercion, rbind data frames instead
-newdf_right <- rbind(dfstrings, 
+newdf_right = rbind(dfstrings, 
                       data.frame(Logicals = FALSE, Age = 19, 
                                  Strings = "lucy"))
 
@@ -126,11 +126,11 @@ str(newdf_right)
 
 #one more note, data frames that are rbinded together must have the same 
 #variable names
-wont_work <- rbind(dfstrings, 
+wont_work = rbind(dfstrings, 
                    data.frame(Truth = FALSE, Age = 19, 
                    Strings = "lucy"))
 
-maybe_work <- rbind(dfstrings, 
+maybe_work = rbind(dfstrings, 
                     data.frame(FALSE, 19, 
                                "lucy"))
 #also does not work - we must name each new variable to be the same as the 
@@ -138,11 +138,11 @@ maybe_work <- rbind(dfstrings,
 
 ######################
 #What can happen when adding a new column of the wrong length to dfstrings
-vec1 <- -1
-vec2 <- -1:-2
-vec3 <- -1:-99
-vec4 <- c("-1", -2)
-vec5 <- c("a", -1, -2)
+vec1 = -1
+vec2 = -1:-2
+vec3 = -1:-99
+vec4 = c("-1", -2)
+vec5 = c("a", -1, -2)
 
 cbind(dfstrings, vec1) #repeats -1 to fill in missing entries
 cbind(dfstrings, vec2) #repeats the vector to fill in missing entries

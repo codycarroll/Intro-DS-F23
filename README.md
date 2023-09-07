@@ -88,7 +88,7 @@ Overall, this course will be split into two main parts: (1) learning the basics 
 ### Case Studies
 | Case Study | Data | Date |
 |:--- | :---  | :---:  |
-|[CS 1: ]() | | | 
+|[CS 1: ]() | | Sept. 14, 2023 | 
 |[CS 2: ]() | | |
 |[CS 3: ]()| | |
 

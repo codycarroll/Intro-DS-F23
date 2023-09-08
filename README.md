@@ -6,7 +6,7 @@
 
 **Class Time**: 12:45 pm - 2:30 pm,	TR in Cowell 107
 
-**Office Hours**:  11a-12p on [Zoom](https://usfca.zoom.us/my/cody.carroll) 1p-2p in person in the Hive
+**Office Hours**:  11a-12p on [Zoom](https://usfca.zoom.us/my/cody.carroll) and 1p-2p in person in the Hive
 
 **Book**: [R for Data Science](http://r4ds.had.co.nz/index.html) by Hadley Wickham and Garrett Grolemund
 

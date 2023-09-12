@@ -1,6 +1,9 @@
 #String Analysis Part 1
 library(stringr)
 
+#or
+library(tidyverse)
+
 string = "this is a string"
 
 #note - if you forget a quotation mark, then the string will
@@ -40,6 +43,7 @@ length(c("a", "R for data science", NA))
 str_c("x", "y")
 #returns "xy"
 
+
 str_c("x", "y", "z")
 # returns "xyz"
 
@@ -73,8 +77,9 @@ str_c("|-", str_replace_na(x), "-|")
 x = c("abc", "de")
 #what if our aim is to print "|-abc, de-|" ?
 trial1 = str_c("|-", x[1], x[2], "-|") #close but no commas
+trial1
 trial2 = str_c("|-", str_c(x[1], x[2], sep = ", "), "-|")
-
+trial2
 #so trial2 works here. Note - str_c() expects individual entries not vectors
 
 ##a quick trial with an if() statement
@@ -122,11 +127,10 @@ str_sub(x, 1, 3)
 
 #can use str_sub as an assignment
 #example - replacing capital letters with lower case letters
-
-str_sub(x, 1, 1) = str_to_lower(str_sub(x, 1, 1))
+str_to_lower(str_sub(x, 1, 1))
 
 #going back and capitalizing the first entries
-str_sub(x, 1, 1) = str_to_upper(str_sub(x, 1, 1))
+str_to_upper(str_sub(x, 1, 1))
 
 
 #----- Pattern matching ------#
@@ -156,7 +160,7 @@ str_view(x, ".a.")
 
 
 # And this tells R to look for an explicit .
-str_view(c("abc", "a.c", "bef"), "a\\.c")
+str_view(c("abc", "a.c", "bef", "bla.cat"), "a\\.c")
 
 #does a single escape work?
 str_view(c("abc", "a.c", "bef"), "a\.c")
@@ -197,3 +201,22 @@ str_view(x, "apple")
 #sequence in the string
 
 str_view(x, "^apple$")
+
+#Exercises:
+
+#1. In your own words, describe the difference 
+# between the sep and collapse arguments to str_c().
+
+#2. Use str_length() and str_sub() to extract 
+# the middle character from the variable `xyz` below. 
+# What will you do if the string has an even number
+# of characters?
+xyz = "abcdefg"
+  
+#3. What does str_wrap() do? When might you want to use it?
+  
+
+#4. Write a function that turns  a vector  
+# (e.g.) c("a", "b", "c") into the string 
+# "a, b, and c". Think carefully about what it 
+# should do if given a vector of length 0, 1, 2, or n, n > 2. 

@@ -8,8 +8,9 @@ my_list
 
 ##calling the first entry (which is a vector c(1, 2, 3))
 my_list[[1]]
+my_list[[4]]
 
-
+str(my_list[[1]])
 #what happens if we use a single bracket?
 my_list[1]
 
@@ -23,15 +24,19 @@ my_list2 = list(matrix(1:9, nrow = 3), c(T, F, T), "ade")
 #let's get the second row of the matrix in the first entry
 my_list2[[1]][2,]
 
+#equivalent to:
+mat = my_list2[[1]]
+mat[3,,]
+
 
 #getting the first two entries in the list
 my_list2[1:2] #this will be returned as a list
 
 ##naming and calling entries of a list using its name
-
 my_list3 = list(Matrix = matrix(1:9, nrow = 3), 
                 Logicals = c(T, T, F),
                 Numeric = c(3.145, 3/4))
+
 
 #calling the Logicals vector
 my_list3[[2]]
@@ -43,11 +48,21 @@ my_list3$Logicals
 # components one at a time and concatenate them all to be a single vector.
 # Note - this will cause coercion. Also, unlisting matrices takes entries
 # according to columns
-unlist(my_list3)
+vec = unlist(my_list3)
+str(vec)
+typeof(vec)
+
+
+diff_types = list("abc", matrix(1:4, nrow = 2), c(TRUE, FALSE))
+typeof(unlist(diff_types))
+
 
 #as an example of unlisting a matrix
 unlist(matrix(1:9, ncol = 3)) #this didn't work! so, the input object must 
 # be a list!
+unlist(list(matrix(1:9, ncol = 3)))
+
+as.numeric(matrix(1:9, ncol = 9))
 
 ##########
 #Playing around with Data Frames in R
@@ -73,6 +88,52 @@ ToothGrowth[2, ] #this is still stored as a data frame since each column may hav
 
 ToothGrowth[2, 2]
 
+#bracket order:
+#ToothGrowth[rows,cols]
+
+
+#Practice:
+
+#1. Give me all the data for the guinea pigs who got VC
+#Save it in a df called vc_guineapigs
+
+ToothGrowth
+
+idx = ToothGrowth$supp == "VC"
+vc_guineapigs = ToothGrowth[idx,]
+
+vc_guineapigs = ToothGrowth[ToothGrowth$supp == "VC",]
+
+#special solution: 
+vc_guineapigs = ToothGrowth[1:30,] #hard coded solution
+
+
+#2. Give me all the guinea pigs who had teeth longer
+# than 10 mm. Save it in a df called long_teeth
+
+index = (ToothGrowth$len >= 10)
+long_teeth = ToothGrowth[index, ]
+nrow(long_teeth)
+
+#3. Return all the guinea pigs who received a dose of 
+# 2 mg/day of OJ. What's the average tooth length of these 
+# guinea pigs? 
+
+index1 = (ToothGrowth$supp == "OJ")
+subset1 = ToothGrowth[index1, ]
+index2 = (subset1$dose == 2)
+subset2 = subset1[index2, ]
+
+subset2
+
+ToothGrowth[(ToothGrowth$supp == "OJ")&(ToothGrowth$dose == 2),]
+
+index1 = (ToothGrowth$supp == "OJ")
+index2 = (ToothGrowth$dose == 2)
+final = ToothGrowth[(index1)&(index2), ]
+
+sum(final$len)/nrow(final)
+mean(final$len)
 
 ##Creating our own data frame
 df1 = data.frame(Logicals = c(T, F, T, F), Age = c(21, 17, 32, 81))

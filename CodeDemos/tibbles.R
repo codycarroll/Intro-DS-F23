@@ -10,9 +10,12 @@ library(tidyverse)
 
 data1 = iris
 str(data1)
+View(data1)
 
 #coerce a data frame to be a tibble:
-data2 = as.tibble(data1)
+data2 = as_tibble(data1)
+data2
+
 
 #note - the tibble version of a data frame will look
 #very similar to the original data frame. 
@@ -37,6 +40,9 @@ tb = tibble(
   `2000` = "number"
 )
 
+tb
+tb$`:)`
+
 #also - tibbles do not automatically convert strings
 #to factors! (no need to use the stringsAsFactors argument!)
 
@@ -50,7 +56,7 @@ tb$`:)`
 tribble(
   ~x, ~y, ~z,
   #--|--|----
-  "a", 2, 3.6,
+  "Dante", 0, 3.6,
   "b", 1, 8.5
 )
 
@@ -68,7 +74,7 @@ nycflights13::flights #by default, this will print
 #print 5 rows and show all columns
 print(nycflights13::flights, n = 5, width = Inf)
 #not very pretty but allows us to look at all the columns at once
-
+View(nycflights13::flights)
 
 #setting the following options will always print every column
 options(tibble.width = Inf)
@@ -99,21 +105,21 @@ df[["x"]]
 df[["z"]]
 
 ##calling columns by position
-df[[1]] #give the first column of df
+df[[1]] #give the first colu,mn of df
 
 #can also use "old" way of calling columns as in data frame calls
 df[, 1]
 df[, c(1,3)]
 
 ##partial matching from a data frame
-df.dataframe = data.frame(
+df_dataframe = data.frame(
   dog = runif(5),
   y = rnorm(5),
   z = c("a", "b", "c", "d", "e")
 )
 
-df.dataframe$do
-df.dataframe$d
+df_dataframe$do
+df_dataframe$d
 
 
 ##plotting 2 variables using a scatter plot

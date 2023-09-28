@@ -36,6 +36,8 @@ mon_factor_NA = factor(data2, levels = month_levels)
 mon_factor_no_NAs = factor(data2) #creates misspelled levels
 
 ##throw a warning whenever there is an unrecognized level in the data
+install.packages("readr")
+library(readr)
 parse_factor(data2, levels = month_levels)
 
 ##Automatically, factor() will order levels in alphabetical order if no
@@ -44,19 +46,22 @@ parse_factor(data2, levels = month_levels)
 #in the data.
 
 mon_factor_short = factor(data) #alphabetical order
-mon_factor_app = factor(data, levels = unique(data))
+mon_factor_app = factor(data, levels = unique(data)) #order in dataset
 
 #if you want look at the levels of a factor, use levels() command
 levels(mon_factor_app)
 
 #overriding the current order of levels
-levels(mon_factor_app) = c("Dec", "Jan", "Sep", "Apr")
+levels(mon_factor_app) = c( "Jan","Apr",  "Sep", "Dec")
 sort(mon_factor_app)
 
 ##Playing around with a data set
 dataset = gss_cat
 ?gss_cat
 str(dataset)
+View(dataset)
+
+levels(dataset$rincome)
 
 #get an overall count of each level in a factor
 #let's do this for the race factor in the dataset
@@ -78,7 +83,9 @@ dataset %>%
   arrange(desc(n))
 
 ### Intro to Visualization
+library(ggplot2)
 
+?ggplot
 #bar plot of race
 ggplot(gss_cat, aes(race)) +
   geom_bar()
@@ -87,6 +94,12 @@ ggplot(gss_cat, aes(race)) +
 ggplot(gss_cat, aes(race)) +
   geom_bar(aes(y = (..count..)/sum(..count..))) + 
   ylab("relative frequency")
+
+race_tbl = dataset %>% 
+  count(race) %>% 
+  arrange(desc(n))
+
+race_tbl$pct = race_tbl$n/sum(race_tbl$n)
 
 
 #creating a summary of religion according to tvhours
@@ -99,16 +112,37 @@ relig_summary = gss_cat %>%
   )
 
 #plot with factors not ordered
-ggplot(relig_summary, aes(tvhours, relig)) + 
+ggplot(relig_summary, aes(x = tvhours, y = relig)) + 
   geom_point()
 
+#plot with factors not ordered
+library(ggrepel)
+ggplot(relig_summary, aes(x = tvhours, y = age)) + 
+  geom_point() + 
+  geom_label_repel(mapping = aes(label = relig))
 
+
+ggplot(gss_cat, aes(x = tvhours, y = age)) + 
+  geom_point()
 
 #Re-ordering a factor according to another variable
 
-#plot with re-ordered factors in religion
-ggplot(relig_summary, aes(tvhours, fct_reorder(relig, tvhours))) +
+#unordered
+ggplot(relig_summary, aes(x = tvhours, y = relig)) + 
   geom_point()
+
+#plot with re-ordered factors in religion
+ggplot(relig_summary,
+       aes(x = tvhours,
+           y = fct_reorder(relig, tvhours))) +
+  geom_point() + 
+  ylab("Religious Affiliation")
+
+ggplot(relig_summary, 
+       aes(x = tvhours, 
+           y = fct_reorder(relig, tvhours))) +
+  geom_point() +
+  ylab("Religious Affiliation")
 
 #in general it's better to do the reordering/other transformations outside 
 # of the aes ... example below:
@@ -149,16 +183,30 @@ newpartyid = fct_collapse(dataset$partyid,
                                "Strong democrat"))
 
 dataset$party_summary = newpartyid
+View(dataset)
 
+drop_idx = (colnames(dataset) == "partyid")
+View(dataset[,!drop_idx])
+
+#hw for me: drop columns by name
+dataset %>% select(year, marital, age)
 
 
 ###revisiting religious refactoring by tv hours using mutate
 
+#piping strategy
 relig_summary %>%
   mutate(relig = fct_reorder(relig, tvhours)) %>%
-  ggplot(aes(tvhours, relig)) +
+  ggplot(aes(x = tvhours, y = relig)) +
   geom_point()
 
+default_relig_summary = relig_summary
+
+reordered_relig_summary = relig_summary %>%
+  mutate(relig = fct_reorder(relig, tvhours))
+
+levels(default_relig_summary$relig)
+levels(reordered_relig_summary$relig)
 
 #a similar plot focusing on income sorted by age:
 
@@ -171,26 +219,52 @@ rincome_summary <- gss_cat %>%
   )
 
 ##Income Range ordered by Age
-ggplot(rincome_summary, aes(age, fct_reorder(rincome, age))) + 
-  geom_point()
+ggplot(rincome_summary, 
+       aes(x = age, 
+           y = fct_reorder(rincome, age))) + 
+  geom_point() + 
+  ylab("Income Range")
 
 ### Exercise
 #1. Make the same plot with mutate and pipes instead 
 # of transforming in the aes.
 
+mutated_rincome = rincome_summary %>% 
+  mutate(rincome = fct_reorder(rincome, age))
+
+mutated_rincome %>% 
+  ggplot(aes(age, rincome)) +
+  geom_point()
+
 #2. Is sorting income ranges by age a good idea? Why or why not?
+
+No bc this breaks the natural order of the income ranges.
 
 #3. What is the default order of the income range level?
 
+levels(rincome_summary$rincome)
+
 #4. If we want to preserve income range level order, but move NA to the end,
  #. what would our plot look like? (Hint: you can use fct_relevel.)
+
+rincome_summary %>% 
+  ggplot(aes(age, rincome)) +
+  geom_point()
+
+
+?fct_relevel
+# 
+# f <- factor(c("a", "b", "c", "d"), levels = c("b", "c", "d", "a"))
+# fct_relevel(f)
+# fct_relevel(f, "a")
+# fct_relevel(f, "b", "a")
+
 
 
 rincome_summary %>% 
   mutate(rincome = fct_relevel(rincome, "Not applicable")) %>% 
   ggplot(aes(age, rincome)) +
   geom_point()
-
 
 
 ### Extra features if time:
@@ -201,12 +275,19 @@ by_age <- gss_cat %>%
   group_by(age) %>%
   mutate(prop = n / sum(n))
 
-ggplot(by_age, aes(age, prop, colour = marital)) +
-  geom_line(na.rm = TRUE)
+View(by_age)
 
-ggplot(by_age, aes(age, prop, colour = fct_reorder2(marital, age, prop))) +
+
+ggplot(by_age, 
+       aes(x = age, y = prop, colour = marital)) +
+  geom_line(na.rm = TRUE) + 
+  ggtitle("Marital Status Composition by Age")
+
+ggplot(by_age, 
+       aes(age, prop, colour = fct_reorder2(marital, age, prop))) +
   geom_line() +
   labs(colour = "marital")
+
 
 
 

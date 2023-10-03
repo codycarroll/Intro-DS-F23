@@ -13,7 +13,6 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 food = read_csv(file = "../Data/Food.csv")
 head(food)
 
-install.packages("ggplot2")
 library(ggplot2)
 
 #---------------------------
@@ -87,7 +86,10 @@ ggarrange(gg1, gg2)
 #adding a density curve on top of a histogram
 
 ggplot(food, aes(x = energy_100g)) + 
-  geom_histogram(aes(y = after_stat(density)), color="black", fill="white", bins = 100) +
+  geom_histogram(aes(y = after_stat(density)), 
+                 color="black", 
+                 fill="white", 
+                 bins = 100) +
   geom_density(alpha=.2, fill="red")
 
 
@@ -117,17 +119,21 @@ diamonds = read.csv(file = "../Data/diamonds.csv",
 #create a scatterplot of carat against price where points are colored 
 #according to diamond color
 
-plot1 = ggplot(diamonds, aes(x = carat, y = price, colour = color))
+plot1 = ggplot(diamonds, 
+               aes(x = carat, y = price, colour = color))
 plot1 #note this is blank because we haven't told it what kind of plot yet
 
-plot2 = plot1 + geom_point()
+plot2 = plot1 + 
+  geom_point()
 plot2
 
 #say now we want to add shapes for the cut of the diamond
-plot3 = plot2 + geom_point(aes(shape = cut))
+plot3 = plot2 + 
+  geom_point(aes(shape = cut))
 
 #adding a smooth line to the original plot
-plot3 = plot3 + geom_smooth()
+plot3 = plot3 + 
+  geom_smooth()
 plot3
 
 # the above gives a different smooth line to every color
@@ -135,23 +141,35 @@ plot3
 # for all data?
 
 # to do this, we need to re-order our specifications.
-plot1b = ggplot(diamonds, aes(x = carat, y = price))
-plot2b = plot1b + geom_smooth() #line first
-plot3b = plot2b + geom_point(aes(colour = color, shape = cut)) #then add colors and shapes
+plot1b = ggplot(diamonds, 
+                aes(x = carat, y = price))
+
+plot2b = plot1b + 
+  geom_smooth() #line first
+
+plot3b = plot2b + 
+  geom_point(aes(colour = color, 
+                 shape = cut)) #then add colors and shapes
 plot3b
 
 
 #use inherit.aes = FALSE to ignore previously defined aesthetics
-plot4 = plot2 + geom_point(aes(shape = cut)) +
+plot4 = plot2 + 
+  geom_point(aes(shape = cut)) +
   geom_smooth(inherit.aes = FALSE, aes(x = carat, y = price))
 plot4
 
 #you can also store geometric objects and apply them to any plot! (super useful!!)
-bestfitline = geom_smooth(method = "lm", se = TRUE, 
-                                colour = alpha("steelblue", 0.5), linewidth = 2)
+bestfitline = geom_smooth(method = "lm", 
+                          se = TRUE, 
+                          colour = alpha("steelblue", 0.5), 
+                          linewidth = 2)
 
-plot4 + bestfitline
+plot4 + 
+  bestfitline
 
 #changing axis and legend titles
-plot4 + xlab("Carat") + ylab("Price") + 
+plot4 + 
+  xlab("Carat") + 
+  ylab("Price") + 
   guides(fill=guide_legend(title="Color"))

@@ -64,8 +64,8 @@ Overall, this course will be split into two main parts: (1) learning the basics 
   
  | Topic | Reading | Lab Assignment (HW) | Due Date | Code Demos|
    | :---  | :---:  | :---:  | :---:  | :---: |
+   | [Plotting in R](https://github.com/codycarroll/Intro-DS-F23/blob/main/Lectures/Plotting%20in%20R.pdf) | | | | [ggplot](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/ggplot1.R)|
    | [Input and Output]() | | | | [Input and Output](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/Input_Output.R) |
-   | [Plotting in R]() | | | | [ggplot](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/ggplot1.R)|
    | [Wrangling Data]() | | | |
    
  

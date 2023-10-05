@@ -188,3 +188,13 @@ plot4 +
   xlab("Carat") + 
   ylab("Price") + 
   guides(fill=guide_legend(title="Color"))
+
+
+#Exercise:
+
+#1. Explore other plots you can make with ggplot and the diamond dataset. 
+#Can you make a hypothesis about two characteristics and then evaluate it with a ggplot?
+
+#2. Plot some data visualizations of your class survey data. Save the most interesting plots and interpret your findings. 
+
+

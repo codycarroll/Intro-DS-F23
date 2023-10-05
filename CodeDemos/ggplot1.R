@@ -13,6 +13,9 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 food = read_csv(file = "../Data/Food.csv")
 head(food)
 
+
+View(food)
+
 library(ggplot2)
 
 #---------------------------
@@ -73,9 +76,13 @@ gg1 = ggplot(food, aes(x = energy_100g)) +
   geom_histogram(color="black", fill="white")
 gg1
 
+dev.new()
+gg1
+
+
 #same histogram but with more bars (100 of them)
 gg2 = ggplot(food, aes(x = energy_100g)) + 
-  geom_histogram(color="black", fill="white", bins = 100)
+  geom_histogram(color="black", fill="white", bins = 100) + 
 gg2
 
 #side-by-side plotting w/ ggarrange
@@ -105,7 +112,7 @@ ggplot(food) +
   geom_boxplot(aes(x = energy_100g, fill = pnns_groups_1))
 
 ggplot(food) + 
-  geom_boxplot(aes(x = energy_100g, fill = pnns_groups_1))+ 
+  geom_boxplot(aes(x = energy_100g, fill = pnns_groups_1)) + 
   coord_flip()
 
 
@@ -124,7 +131,7 @@ plot1 = ggplot(diamonds,
 plot1 #note this is blank because we haven't told it what kind of plot yet
 
 plot2 = plot1 + 
-  geom_point()
+  geom_point(aes(alpha = 0.25))
 plot2
 
 #say now we want to add shapes for the cut of the diamond
@@ -135,6 +142,8 @@ plot3 = plot2 +
 plot3 = plot3 + 
   geom_smooth()
 plot3
+
+plot3 
 
 # the above gives a different smooth line to every color
 # but what if we just want a single line
@@ -147,6 +156,11 @@ plot1b = ggplot(diamonds,
 plot2b = plot1b + 
   geom_smooth() #line first
 
+plot2b
+
+avg_smoothed_curve = geom_smooth(data = diamonds, aes(x = carat, y = price))
+
+
 plot3b = plot2b + 
   geom_point(aes(colour = color, 
                  shape = cut)) #then add colors and shapes
@@ -156,6 +170,7 @@ plot3b
 #use inherit.aes = FALSE to ignore previously defined aesthetics
 plot4 = plot2 + 
   geom_point(aes(shape = cut)) +
+  geom_smooth() + 
   geom_smooth(inherit.aes = FALSE, aes(x = carat, y = price))
 plot4
 

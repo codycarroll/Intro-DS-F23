@@ -89,7 +89,7 @@ Overall, this course will be split into two main parts: (1) learning the basics 
 ### Case Studies
 | Case Study | Data | Date |
 |:--- | :---  | :---:  |
-|[CS 1: ](Analyzing Your Classmates) | Class Survey Data | Tues, Sept. 19, 2023 | 
+| CS 1:Analyzing Your Classmates | Class Survey Data | Tues, Sept. 19, 2023 | 
 |[CS 2: ]() | | |
 |[CS 3: ]()| | |
 

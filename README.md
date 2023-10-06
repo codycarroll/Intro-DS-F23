@@ -75,9 +75,9 @@ Overall, this course will be split into two main parts: (1) learning the basics 
  
  | Topic | Reading | Lab Assignment (HW) | Due Date | Code Demos|
  | :---  | :---:  | :---:  | :---:  | :---: |
- | [Control Flow]()|[Ch. 19 in R for Data Science](http://r4ds.had.co.nz/vectors.html) | | | [Functions 1](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/Functions1.R)|
- | [Writing Functions]()| [Ch. 19 in R for Data Science](http://r4ds.had.co.nz/vectors.html)| | | [Functions 2](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/Functions2.R)|
- | [Functionals]()| [Ch. 18 in R for Data Science](http://r4ds.had.co.nz/vectors.html)| | | 
+ | [Control Flow]()|[Ch. 19 in R for Data Science](http://r4ds.had.co.nz/functions.html) | | | [Functions 1](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/Functions1.R)|
+ | [Writing Functions]()| [Ch. 19 in R for Data Science](http://r4ds.had.co.nz/functions.html)| | | [Functions 2](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/Functions2.R)|
+ | [Functionals]()| [Ch. 18 in R for Data Science](http://r4ds.had.co.nz/functions.html)| | | 
  
  **Statistical Modeling in R**
  
@@ -89,7 +89,7 @@ Overall, this course will be split into two main parts: (1) learning the basics 
 ### Case Studies
 | Case Study | Data | Date |
 |:--- | :---  | :---:  |
-|[CS 1: ]() | | Tues, Sept. 19, 2023 | 
+|[CS 1: ](Analyzing Your Classmates) | Class Survey Data | Tues, Sept. 19, 2023 | 
 |[CS 2: ]() | | |
 |[CS 3: ]()| | |
 

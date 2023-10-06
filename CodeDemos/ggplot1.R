@@ -13,8 +13,24 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 food = read_csv(file = "../Data/Food.csv")
 head(food)
 
+unique(food$pnns_groups_1)
 
-View(food)
+#How can we combine/refactor our categories to consolidate duplicates?
+fv_idx = (food$pnns_groups_1 == "fruits-and-vegetables")
+food$pnns_groups_1[fv_idx] = "Fruits and vegetables"
+
+newpnns1 = fct_collapse(food$pnns_groups_1,
+                          other = c("unknown"),
+                          `Cereals and potatoes` = c("Cereals and potatoes", 
+                                                     "cereals-and-potatoes"),
+                          `Sugary snacks` = c("Sugary snacks", 
+                                              "sugary-snacks"),
+                          `Salty snacks` = c("Salty snacks", 
+                                             "salty-snacks"),
+                          )
+
+food$food_group = newpnns1
+
 
 library(ggplot2)
 
@@ -24,16 +40,16 @@ library(ggplot2)
 #to first specify a ggplot() object with aesthetics (i.e., aes()), and
 #then add geometric objects, or other objects to the original plot
 
-#Interesting (and useful) - ggplot's are objects, so they can be saved and loaded
+#Interesting (and useful) - ggplots are objects, so they can be saved and loaded
 #easily
 
 #plot a bar chart of pnns_groups_1
 ggplot(food) + 
-  geom_bar(aes(x = pnns_groups_1, fill = pnns_groups_1))
+  geom_bar(aes(x = food_group, fill = food_group))
 
 #text trainwreck on bottom; to rotate xaxis labels use this:
 ggplot(food) + 
-  geom_bar(aes(x = pnns_groups_1, fill = pnns_groups_1)) +
+  geom_bar(aes(x = food_group, fill = food_group)) +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
 
 #plot in a new window
@@ -45,7 +61,7 @@ ggplot(food) +
 #adding a few arguments for labels
 
 ggplot(food) + 
-  geom_bar(aes(x = pnns_groups_1, fill = pnns_groups_1)) +
+  geom_bar(aes(x = food_group, fill = food_group)) +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + 
   xlab("food type") + 
   ggtitle("Food Groups")
@@ -82,7 +98,7 @@ gg1
 
 #same histogram but with more bars (100 of them)
 gg2 = ggplot(food, aes(x = energy_100g)) + 
-  geom_histogram(color="black", fill="white", bins = 100) + 
+  geom_histogram(color="black", fill="white", bins = 100) 
 gg2
 
 #side-by-side plotting w/ ggarrange
@@ -109,10 +125,21 @@ ggplot(food) +
 #show boxplot of this variable across food groups in
 #pnns_groups_1
 ggplot(food) + 
-  geom_boxplot(aes(x = energy_100g, fill = pnns_groups_1))
+  geom_boxplot(aes(x = energy_100g, fill = food_group))
 
 ggplot(food) + 
-  geom_boxplot(aes(x = energy_100g, fill = pnns_groups_1)) + 
+  geom_boxplot(aes(x = energy_100g, fill = food_group)) + 
+  coord_flip()
+
+ggplot(food) + 
+  geom_violin(aes(y = energy_100g, 
+                  x = food_group, 
+                  fill = food_group))
+
+ggplot(food) + 
+  geom_violin(aes(y = energy_100g, 
+                  x = food_group, 
+                  fill = food_group)) + 
   coord_flip()
 
 
@@ -137,6 +164,7 @@ plot2
 #say now we want to add shapes for the cut of the diamond
 plot3 = plot2 + 
   geom_point(aes(shape = cut))
+plot3
 
 #adding a smooth line to the original plot
 plot3 = plot3 + 
@@ -158,12 +186,12 @@ plot2b = plot1b +
 
 plot2b
 
-avg_smoothed_curve = geom_smooth(data = diamonds, aes(x = carat, y = price))
-
 
 plot3b = plot2b + 
   geom_point(aes(colour = color, 
-                 shape = cut)) #then add colors and shapes
+                 shape = cut)) +  #then add colors and shapes  
+  geom_smooth() #line first
+
 plot3b
 
 
@@ -179,6 +207,11 @@ bestfitline = geom_smooth(method = "lm",
                           se = TRUE, 
                           colour = alpha("steelblue", 0.5), 
                           linewidth = 2)
+
+line = lm(price ~ carat, data = diamonds)
+summary(line)
+
+bestfitline$computed_geom_params
 
 plot4 + 
   bestfitline

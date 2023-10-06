@@ -6,7 +6,7 @@ y = x^2
 
 #set current directory
 dir = getwd()
-setwd(dir)
+setwd("/Users/cjcarroll/Desktop/repos/Intro-DS-F23/CodeDemos")
 
 #save the variables x and y
 save(x, y, file = "first_data.RData")
@@ -27,17 +27,25 @@ load(file = "first_data.rds")
 airports1 = read.table(file = "../Data/airports.csv",
                         sep = ",", header = FALSE)
 
+View(airports1)
+
 #in airports1, we didn't account for the header / column names
 #as a result, every value in the data frame was coerced to strings
 
 airports2 = read.table(file = "../Data/airports.csv",
-                        sep = ",", header = TRUE)
+                        sep = ",", header = TRUE, stringsAsFactors = TRUE)
+
+View(airports2)
+
+str(airports2)
 
 #again, the above forces all strings to be factors.
 
 #to keep strings, run the following:
 airports3 = read.table(file = "../Data/airports.csv",
                         sep = ",", header = TRUE, stringsAsFactors = FALSE)
+
+str(airports3)
 
 #or we can use read.csv
 airports4 = read.csv(file = "../Data/airports.csv",
@@ -72,10 +80,12 @@ readLines("hello_world.txt") #note this has no spaces or lines between the text
 
 #if we want a new line, use \n
 
-cat("hello world \n", file = "hello_world.txt")
+cat("hello world \n line 2 \n line 3 \n", file = "hello_world.txt")
+readLines("hello_world.txt")
+
 
 #add a line to the same file
-cat("My name is Cody. \n", file = "hello_world.txt", append = TRUE)
+cat("My name is Cody. \n", file = "hello_world.txt", append = FALSE)
 
 readLines("hello_world.txt")
 

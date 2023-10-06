@@ -36,7 +36,6 @@ mon_factor_NA = factor(data2, levels = month_levels)
 mon_factor_no_NAs = factor(data2) #creates misspelled levels
 
 ##throw a warning whenever there is an unrecognized level in the data
-install.packages("readr")
 library(readr)
 parse_factor(data2, levels = month_levels)
 

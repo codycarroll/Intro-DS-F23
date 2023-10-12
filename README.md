@@ -67,7 +67,7 @@ Overall, this course will be split into two main parts: (1) learning the basics 
    | [Plotting in R](https://github.com/codycarroll/Intro-DS-F23/blob/main/Lectures/Plotting%20in%20R.pdf) | | | | [ggplot](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/ggplot1.R)|
    | [Input and Output]() | | | | [Input and Output](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/Input_Output.R) |
    |[More Plotting with ggplot2](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/ggplot2_dogs.R)|||| [ggplot and dogs](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/ggplot2_dogs.R) | 
-   | [Wrangling Data](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/data_wrangling.R) | | || [Wrangling Data](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/data_wrangling.R)|
+   | [Wrangling Data](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/data_wrangling.R) | | [HW4](https://github.com/codycarroll/Intro-DS-F23/blob/main/Assignments/HW4.pdf)| Friday 10/20| [Wrangling Data](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/data_wrangling.R)|
    
  
  

@@ -1,0 +1,330 @@
+---
+title: "Linear Regression Lecture Demo"
+author: "Cody Carroll"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+This data set provides measurements of the diameter, height and volume of timber in 31 felled black cherry trees.
+
+```{r}
+library(ggplot2)
+library(tidyverse)
+?trees
+
+trees
+treedata=trees
+ggplot(treedata, aes(x=Girth, y=Volume)) + 
+  geom_point() 
+
+```
+
+Fit a linear model, add the least squares regression line:
+```{r}
+treeline = lm(Volume~Girth, data=treedata)
+treedata$predicted = predict(treeline)   # Save the predicted values
+treedata$residuals = residuals(treeline) # add residuals to the data.frame
+
+treedata
+
+
+```
+
+```{r}
+
+#add the regression line to the plot with geom_smooth
+
+ggplot(treedata, aes(x=Girth, y=Volume)) + 
+  geom_point() + 
+  geom_smooth(method = "lm", se = FALSE)
+
+```
+
+
+Interpret the meaning of slope and intercept.
+
+Slope: 
+
+Intercept:
+
+
+
+Let's try it with your class data. What's the relationship between shoe size and height for people in this class?
+```{r}
+survey = read.csv("~/Desktop/repos/master-intro-ds/Data/casestudy1_data.csv")
+
+ggplot(survey, aes(x=heightcm, y=shoesize)) + 
+  geom_point() 
+surveyline=lm(shoesize~heightcm, data=survey)
+summary(surveyline)
+```
+
+Predict a new value: 
+What shoe size would we expect someone who is 180cm (6') to have?
+
+Doing it by hand:
+```{r}
+-14.85663+0.13809*(180) #~size 10
+```
+
+Which pair of variables are more strongly related? 
+Tree girth & volume? Or student height & shoe size?
+
+```{r}
+ggplot(treedata, aes(x=Girth, y=Volume)) + 
+  geom_point() + 
+  geom_smooth(method = "lm", se = FALSE)
+
+ggplot(survey, aes(x=heightcm, y=shoesize)) + 
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE)
+```
+
+The strength of the /linear/ relationship is measured by the $R^2$ statistic:
+
+```{r}
+summary(treeline) #0.9353
+summary(surveyline) #0.5955
+```
+
+$R^2$ is also called the "coefficient of determination."
+
+It can be interpreted as the fraction of variation in $y$ explained by the regression line.
+
+$R^2$ has a somewhat technical definition; has to do with residuals and variance of $y$. Not our focus here. 
+
+
+# Residual plot
+The residual plot shows the x-values vs. the residuals:
+```{r}
+ggplot(treedata, aes(x=Girth, y=residuals))  + 
+  geom_hline(aes(yintercept = 0), color="blue") + 
+  geom_point() 
+```
+
+If you're getting an error, make sure you've actually added the residuals to your original data frame!! Otherwise ggplot cannot find them.
+
+
+Let's visualize residuals on the original scatter plot for the tree data.
+```{r}
+ggplot(treedata, aes(x=Girth, y=Volume)) + 
+  geom_point() + 
+  geom_smooth(method = "lm", se = FALSE) +
+  geom_point(aes(y = predicted), shape = 1) +
+  geom_segment(aes(xend = Girth, yend = predicted), color = "red")
+```
+
+```{r}
+#"residual plot": plots x vs the residuals
+ggplot(treedata, aes(x=Girth, y=residuals))  + 
+  geom_hline(aes(yintercept = 0), color="blue") + 
+  geom_point() 
+```
+
+
+How does this relate back to our original linear regression plot?
+```{r}
+ggplot(treedata, aes(x=Girth, y=residuals))  + 
+  geom_hline(aes(yintercept = 0), color="blue") + 
+  geom_point() +
+  geom_segment(aes(xend = Girth, yend = 0), color = "red")
+```
+
+Pattern in residuals -> bad. Some assumption has been violated. It means linear regression (in its current form) isn't appropriate.
+
+
+Example of this:
+Women's heights and weights
+```{r}
+?women
+
+womendata=women
+ggplot(womendata, aes(x=height, y=weight)) +  
+  geom_point()
+
+womenline=lm(weight~height, data=women)
+ggplot(womendata, aes(x=height, y=weight)) +  
+  geom_point() + 
+  geom_smooth(method = "lm", se = FALSE) 
+```
+
+Hmm.. seems not so bad. but let's see residuals to check:
+```{r}
+womendata$residuals=residuals(womenline)
+
+ggplot(womendata, aes(x=height, y=residuals)) +  
+  geom_hline(aes(yintercept = 0), color="blue") + 
+  geom_point()
+```
+Clear pattern -> linear regression not appropriate/
+What does this mean?
+The linear regression is making systematic errors in its predictions.
+We should use something other than a line to model the relationship!
+
+
+## Beware overrelying on $R^2$:
+```{r}
+summary(womenline)
+```
+High $R^2$ ! $R^2=$.991 ... even though we have pattern in residuals.
+Having a high $R^2$ doesn't necessarily mean the linear regression is the best fit.
+
+In other words, there probably is some other nonlinear relationship out there that would be better at explaining the relationship between women's height & weights.
+
+Limitations of regression: **ALWAYS LOOK AT THE PLOT**!
+
+Cautionary tale: Anscombe's quartant dataset
+```{r}
+g1 = ggplot(anscombe, aes(x=x1, y=y1)) + 
+  geom_point() 
+g2 = ggplot(anscombe, aes(x=x2, y=y2)) + 
+  geom_point() 
+g3 = ggplot(anscombe, aes(x=x3, y=y3)) + 
+  geom_point() 
+g4 = ggplot(anscombe, aes(x=x4, y=y4)) + 
+  geom_point() 
+
+
+#btw, gridExtra package will let us see all at once
+library(gridExtra)
+grid.arrange(g1, g2, g3, g4, nrow = 2)
+```
+
+Let's see the linear regression outputs though:
+
+```{r}
+mod1=lm(y1~x1, data=anscombe)
+mod2=lm(y2~x2, data=anscombe)
+mod3=lm(y3~x3, data=anscombe)
+mod4=lm(y4~x4, data=anscombe)
+```
+
+Statistics are the same:
+```{r}
+#summary(mod1)
+#summary(mod2)
+#summary(mod3)
+#summary(mod4)
+```
+
+Means of x's and y's are same:
+```{r}
+colMeans(anscombe)
+```
+sd's of x's and y's same:
+```{r}
+apply(anscombe, 2, sd)
+```
+
+# OTHER CAUTIONARY TALES IN REGRESSION
+
+
+1920s car data- stopping distances for brakes:
+
+```{r}
+?cars
+
+##>>>Note that the data were recorded in the 1920s.<<<
+str(cars)
+ggplot(cars, aes(x=speed, y=dist)) + geom_point()
+
+#fit the least squares line
+carsline=lm(dist~speed, data=cars)
+summary(carsline)
+ggplot(cars, aes(x=speed, y=dist)) + 
+  geom_point() + geom_smooth(method = "lm", se = FALSE)
+```
+
+Now let's say I wanted to estimate the distance taken to stop for a car going 120mph.
+
+```{r}
+-17.5791+3.9324*120
+
+newdata=data.frame(speed=120, dist=454.3089)
+
+ggplot(cars, aes(x=speed, y=dist)) + 
+  geom_point() + geom_point(data=newdata) + 
+  geom_smooth(method = "lm", se = FALSE, fullrange=T)
+```
+
+Ok.... but does this make sense? Using your **common sense**!
+
+What kind of cars were going 120mph in 1920?????
+Not a sensible question to ask!
+
+Additionally, we have no data near the point of a car going 120 mph, so we have no concrete evidence that the linear trend would continue, i.e. some other trend may occur once we get to extreme speeds.
+
+These problems are some of the issues associated with *extrapolation*.
+
+Extrapolation occurs when you try to use an estimated regression equation to predict a new y value for x values outside of the range of of the sample data used to determine the regression equation.
+
+
+Another extrapolation example... from the Anscombe dataset you saw before:
+
+```{r}
+ggplot(anscombe, aes(x=x2, y=y2)) + 
+  geom_point() + geom_smooth(method = "lm", se = FALSE)
+
+summary(mod2)
+```
+
+Predict a value for x = 20:
+```{r}
+3+.5*20
+
+newanscombe=data.frame(x2=20, y2=13)
+
+ggplot(anscombe, aes(x=x2, y=y2)) + 
+  geom_point() + geom_point(data = newanscombe) + 
+  geom_smooth(method = "lm", se = FALSE, fullrange = T, color = "red")
+
+```
+
+Probably not right... more likely to be something like:
+```{r}
+ggplot(anscombe, aes(x=x2, y=y2)) + 
+  geom_point() + geom_point(data = newanscombe) + 
+  geom_smooth(method = "lm", se = FALSE, fullrange = T,  color = "red") + 
+  geom_smooth(method = "lm", formula= y ~ poly(x, 2, raw=TRUE), se = FALSE, fullrange = T) 
+
+quadanscombe=data.frame(x2=20, y2=-1.0598)
+
+ggplot(anscombe, aes(x=x2, y=y2)) + 
+  geom_point() + geom_point(data = newanscombe) + 
+  geom_smooth(method = "lm", se = FALSE, fullrange = T,  color = "red") + 
+  geom_smooth(method = "lm", formula= y ~ poly(x, 2, raw=TRUE), se = FALSE, fullrange = T) +
+  geom_point(data = quadanscombe) 
+```
+
+Very very different predictions for x=20!! 
+Linear regression is not always the answer. 
+How could we have known that the linear model was not appropriate, before even trying to extrapolate?
+
+Residual plot!!!
+```{r}
+anscombedata=anscombe
+ansline=lm(y2~x2, data=anscombedata)
+anscombedata$residuals=residuals(ansline)
+
+ggplot(anscombedata, aes(x=x2, y=residuals))  + 
+  geom_hline(aes(yintercept = 0), color="blue") + 
+  geom_point() 
+```
+
+Clear pattern! Systematic error is present in the LSRL predictions.
+
+Btw if you were wondering how I got that point, (20, -1.0598), I used polynomial regression-- a more advanced generalization of linear regression:
+```{r}
+lm(y2 ~ poly(x2, 2, raw=TRUE), data=anscombe)
+-5.9958+2.7808*20-0.1267*(20)^2
+```
+
+Bonus video: This is what might happen to you if you try to extrapolate. :P  
+https://vimeo.com/212731897
+```
+

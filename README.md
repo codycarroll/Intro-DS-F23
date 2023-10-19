@@ -108,7 +108,7 @@ Overall, this course will be split into two main parts: (1) learning the basics 
 - Friday, November 3rd - Last day to withdraw
 - Thursday, November 23rd - Thanksgiving Holiday (**no class**)
 - Tuesday, December 5th - Last day of class
-- Tuesday, December 7th - Review day
+- Thursday, December 7th - Review day
 
 ## Additional References
 

@@ -69,7 +69,11 @@ Overall, this course will be split into two main parts: (1) learning the basics 
    |[More Plotting with ggplot2](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/ggplot2_dogs.R)|||| [ggplot and dogs](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/ggplot2_dogs.R) | 
    | [Wrangling Data](https://github.com/codycarroll/Intro-DS-F23/blob/main/Lectures/Wrangling%20Data.pdf) | | [HW4](https://github.com/codycarroll/Intro-DS-F23/blob/main/Assignments/HW4.pdf)| Friday 10/20| [Wrangling Data](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/data_wrangling.R)|
    
+  **Statistical Modeling in R**
  
+ | Topic | Reading | Lab Assignment (HW) | Due Date | Code Demos|
+ | :---  | :---:  | :---:  | :---:  | :---: |
+ | [Intro to Statistical Modeling in R]() | [Ch. 23 and 24 in R for Data Science](http://r4ds.had.co.nz) | | [Linear Regression Demo](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/linear_regression_demo.Rmd) | 
  
  **Programming**
  
@@ -79,11 +83,7 @@ Overall, this course will be split into two main parts: (1) learning the basics 
  | [Writing Functions]()| [Ch. 19 in R for Data Science](http://r4ds.had.co.nz/functions.html)| | | [Functions 2](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/Functions2.R)|
  | [Functionals]()| [Ch. 18 in R for Data Science](http://r4ds.had.co.nz/functions.html)| | | 
  
- **Statistical Modeling in R**
- 
- | Topic | Reading | Lab Assignment (HW) | Due Date | Code Demos|
- | :---  | :---:  | :---:  | :---:  | :---: |
- | [Intro to Statistical Modeling in R]() | [Ch. 23 and 24 in R for Data Science](http://r4ds.had.co.nz) | | | 
+
 
 
 ### Case Studies

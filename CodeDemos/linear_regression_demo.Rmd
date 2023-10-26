@@ -19,14 +19,18 @@ library(tidyverse)
 
 trees
 treedata=trees
-ggplot(treedata, aes(x=Girth, y=Volume)) + 
-  geom_point() 
+colnames(treedata) = c("Diameter",  "Height", "Volume")
+
+ggplot(treedata, aes(x=Diameter, y=Volume)) + 
+  geom_point() +
+  geom_smooth(method = "lm")
 
 ```
 
 Fit a linear model, add the least squares regression line:
 ```{r}
-treeline = lm(Volume~Girth, data=treedata)
+treeline = lm(Volume ~ Diameter, data=treedata)
+#lm(y ~ x, data = data)
 treedata$predicted = predict(treeline)   # Save the predicted values
 treedata$residuals = residuals(treeline) # add residuals to the data.frame
 
@@ -39,18 +43,72 @@ treedata
 
 #add the regression line to the plot with geom_smooth
 
-ggplot(treedata, aes(x=Girth, y=Volume)) + 
+ggplot(treedata, aes(x=Diameter, y=Volume)) + 
   geom_point() + 
   geom_smooth(method = "lm", se = FALSE)
+
+
+
+
+```
+
+```{r}
+summary(treeline)
+
+
+#predict the volume for the 10th tree in my dataset
+treedata[10,]
+-36.94+5.07*(11.2)
+
+
+treedata[11,]
+-36.94+5.07*(11.3)
 
 ```
 
 
+
+
+
 Interpret the meaning of slope and intercept.
 
-Slope: 
+Slope: On average, for every 1 in increase in the diameter of a tree, 
+we expect its volume to increase by 5.0659 cubic ft. 
+
+```{r}
+
+-36.9435 + 5.0659*12 #predicted vol for a 12in diam tree, 23.8473
+-36.9435 + 5.0659*13 #predicted vol for a 13in diam tree, 28.9132
+
+28.9132 - 23.8473
+
+
+##Q: What is the expected increase or decrease in volume of a tree if I
+##increase its diameter by 5 in? 
+
+#slope * change in x  = expected difference in y 
+
+5.0659 * 5 
+
+-36.9435 + 5.0659*12 #predicted vol for a 12in diam tree, 23.8473
+-36.9435 + 5.0659*17 #predicted vol for a 17in diam tree, 49.1768
+
+49.1768 - 23.8473
+
+
+#Q: What is the unit of the slope? 5.0659 cu. ft / in. 
+#
+```
 
 Intercept:
+
+The intercept is calculated as -36.9435 cu ft.
+
+How do I interpret this value? 
+
+
+The intercept value is the predicted volume of a tree with diameter 0in. 
+This is nonsense!! The intercept is not interpretable in this problem. 
 
 
 
@@ -60,29 +118,66 @@ survey = read.csv("~/Desktop/repos/master-intro-ds/Data/casestudy1_data.csv")
 
 ggplot(survey, aes(x=heightcm, y=shoesize)) + 
   geom_point() 
-surveyline=lm(shoesize~heightcm, data=survey)
+surveyline=lm(shoesize ~ heightcm, data = survey)
 summary(surveyline)
+
+
+surveyline$coefficients
+surveyline$coefficients[1] + surveyline$coefficients[2] * 160
 ```
 
 Predict a new value: 
 What shoe size would we expect someone who is 180cm (6') to have?
+
+```{r}
+summary(surveyline)
+
+
+-14.85663 + 0.13809 * 180 #predicted shoesize of a 180cm person
+```
+
+
+
+
+
 
 Doing it by hand:
 ```{r}
 -14.85663+0.13809*(180) #~size 10
 ```
 
+Doing it by extracting the "coefficients":
+```{r}
+surveyline$coefficients[1] + surveyline$coefficients[2] * 180
+```
+
+
+Doing it by using the predict function:
+```{r}
+newdf = data.frame(heightcm = 180)
+predict(surveyline, newdf)
+#first model, second newdf with x values you want to predict at
+
+xs = c(150,160,170,180,190)
+newdf_manyxs = data.frame(heightcm = xs)
+yhats = predict(surveyline, newdf_manyxs)
+cbind(xs, yhats)
+```
+
 Which pair of variables are more strongly related? 
 Tree girth & volume? Or student height & shoe size?
 
 ```{r}
-ggplot(treedata, aes(x=Girth, y=Volume)) + 
+gg1 = ggplot(treedata, aes(x=Diameter, y=Volume)) + 
   geom_point() + 
   geom_smooth(method = "lm", se = FALSE)
 
-ggplot(survey, aes(x=heightcm, y=shoesize)) + 
+gg2 = ggplot(survey, aes(x=heightcm, y=shoesize)) + 
   geom_point() +
   geom_smooth(method = "lm", se = FALSE)
+
+library(ggpubr)
+ggarrange(gg1, gg2)
 ```
 
 The strength of the /linear/ relationship is measured by the $R^2$ statistic:
@@ -90,6 +185,56 @@ The strength of the /linear/ relationship is measured by the $R^2$ statistic:
 ```{r}
 summary(treeline) #0.9353
 summary(surveyline) #0.5955
+
+summary(treeline)$r.squared
+summary(surveyline)$r.squared
+
+#R^2 is always locked between 0 and 1 (for linear regression.)
+#R^2 closer to 0: very weak linear relationship between x and y.
+#R^2 is closer to 1: very strong linear relationship between x and y. 
+
+
+#Exercise: 
+#In your survey data find a pair of variables x and y such that the R^2 value is nearly 1. 
+
+library(GGally)
+ggpairs(survey[,10:15])
+
+
+ggplot(survey, aes(x = heightcm, y = heightin)) + 
+  geom_point()
+
+
+
+#How to remove that outlier?? 
+
+#manual filtering
+survey[survey$heightin<20, ]
+survey_no_outlier = survey[-48, ]
+
+#idx based filtering
+idx = which(survey$heightin<20)
+survey_no_outlier = survey[-idx, ]
+
+#using dplyr functions
+survey_no_outlier = survey %>% filter(heightin>20)
+
+ggplot(survey_no_outlier, aes(x = heightcm, y = heightin)) + 
+  geom_point()
+
+
+mod = lm(heightin ~ heightcm, data = survey_no_outlier)
+summary(mod)
+
+
+#Exercise: find a pair of x and y variables where R^2 is very close to 0. 
+
+
+ggplot(survey, aes(x = X, y = number)) + 
+  geom_point()
+
+randomlm = lm(number ~ shoesize, data = survey)
+summary(randomlm)
 ```
 
 $R^2$ is also called the "coefficient of determination."
@@ -98,11 +243,20 @@ It can be interpreted as the fraction of variation in $y$ explained by the regre
 
 $R^2$ has a somewhat technical definition; has to do with residuals and variance of $y$. Not our focus here. 
 
+#FYI
+# $R^2 = 1 - SSE/SST$
+
 
 # Residual plot
 The residual plot shows the x-values vs. the residuals:
 ```{r}
-ggplot(treedata, aes(x=Girth, y=residuals))  + 
+ggplot(treedata, aes(x=Diameter, y=residuals))  + 
+  geom_hline(aes(yintercept = 0), color="blue") + 
+  geom_point() 
+
+
+survey$residuals = residuals(surveyline)
+ggplot(survey, aes(x=heightcm, y=residuals))  + 
   geom_hline(aes(yintercept = 0), color="blue") + 
   geom_point() 
 ```
@@ -112,29 +266,18 @@ If you're getting an error, make sure you've actually added the residuals to you
 
 Let's visualize residuals on the original scatter plot for the tree data.
 ```{r}
-ggplot(treedata, aes(x=Girth, y=Volume)) + 
+ggplot(treedata, aes(x=Diameter, y=Volume)) + 
   geom_point() + 
   geom_smooth(method = "lm", se = FALSE) +
   geom_point(aes(y = predicted), shape = 1) +
-  geom_segment(aes(xend = Girth, yend = predicted), color = "red")
+  geom_segment(aes(xend = Diameter, yend = predicted), color = "red")
 ```
 
-```{r}
-#"residual plot": plots x vs the residuals
-ggplot(treedata, aes(x=Girth, y=residuals))  + 
-  geom_hline(aes(yintercept = 0), color="blue") + 
-  geom_point() 
-```
 
 
 How does this relate back to our original linear regression plot?
-```{r}
-ggplot(treedata, aes(x=Girth, y=residuals))  + 
-  geom_hline(aes(yintercept = 0), color="blue") + 
-  geom_point() +
-  geom_segment(aes(xend = Girth, yend = 0), color = "red")
-```
 
+#key takeaway when you make a residual plot
 Pattern in residuals -> bad. Some assumption has been violated. It means linear regression (in its current form) isn't appropriate.
 
 
@@ -172,7 +315,7 @@ We should use something other than a line to model the relationship!
 summary(womenline)
 ```
 High $R^2$ ! $R^2=$.991 ... even though we have pattern in residuals.
-Having a high $R^2$ doesn't necessarily mean the linear regression is the best fit.
+Having a high $R^2$ doesn't necessarily mean the linear regression is the best model choice.
 
 In other words, there probably is some other nonlinear relationship out there that would be better at explaining the relationship between women's height & weights.
 
@@ -206,10 +349,10 @@ mod4=lm(y4~x4, data=anscombe)
 
 Statistics are the same:
 ```{r}
-#summary(mod1)
-#summary(mod2)
-#summary(mod3)
-#summary(mod4)
+summary(mod1)
+summary(mod2)
+summary(mod3)
+summary(mod4)
 ```
 
 Means of x's and y's are same:

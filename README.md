@@ -79,9 +79,9 @@ Overall, this course will be split into two main parts: (1) learning the basics 
  
  | Topic | Reading | Lab Assignment (HW) | Due Date | Code Demos|
  | :---  | :---:  | :---:  | :---:  | :---: |
- | [Control Flow]()|[Ch. 19 in R for Data Science](http://r4ds.had.co.nz/functions.html) | | | [Functions 1](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/Functions1.R)|
- | [Writing Functions]()| [Ch. 19 in R for Data Science](http://r4ds.had.co.nz/functions.html)| | | [Functions 2](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/Functions2.R)|
- | [Functionals]()| [Ch. 18 in R for Data Science](http://r4ds.had.co.nz/functions.html)| | | 
+ | [Control Flow](https://github.com/codycarroll/Intro-DS-F23/blob/main/Lectures/Functional%20Programming.pdf)|[Ch. 19 in R for Data Science](http://r4ds.had.co.nz/functions.html) | | | [Functions 1](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/Functions1.R)|
+ | [Writing Functions](https://github.com/codycarroll/Intro-DS-F23/blob/main/Lectures/Functional%20Programming.pdf)| [Ch. 19 in R for Data Science](http://r4ds.had.co.nz/functions.html)| | | [Functions 2](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/Functions2.R)|
+ | [Functionals](https://github.com/codycarroll/Intro-DS-F23/blob/main/Lectures/Functional%20Programming.pdf)| [Ch. 18 in R for Data Science](http://r4ds.had.co.nz/functions.html)| | | 
  
 
 

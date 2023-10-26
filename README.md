@@ -96,7 +96,7 @@ Overall, this course will be split into two main parts: (1) learning the basics 
 ### Final Project
 | Description | Due Date |
 |:--- | :---  |
-|[Project Signup](http://archive.ics.uci.edu/ ml/.) | October 31th at 9:00 AM|
+|[Project Signup](https://docs.google.com/spreadsheets/d/1UpXWnBNYKVqsB-zCNWmOE85OkPn9hDuUzM1_gjwHxIs/edit#gid=0) | October 31th at 9:00 AM|
 |[Final Project Description](https://github.com/codycarroll/Intro-DS-F23/blob/main/Assignments/Final_Project_Fall_2023.pdf) | Slides - November 30th at 9:00 AM, Report - December 10th at 11:59 PM|
 
 

@@ -97,20 +97,7 @@ my.func1 = function(){
 }
 
 
-##-defining a global variable within a function
-
-x = 1
-my.func3 = function(){
-  x <= 3
-}
-#note - the double assignment above globally changed the value
-# of x (from 1 to 3)
-
-#the following will not do that
-x = 1
-my.func4 = function(){
-  x = 3
-}
+my.func1()
 
 ##Default arguments in a function
 

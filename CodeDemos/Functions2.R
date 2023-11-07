@@ -22,15 +22,15 @@ devtools::install_github("functionaldata/tPACE")
 library(fdapace, quietly = TRUE)
 
 
-#check out the documentation at the top of the multilayer.extraction.R file on
+#check out the documentation at the top of the file on
 #github - we'll use this later to write packages
 
 ?CreatePathPlot #gives help from a custom function
 
 
-##--in class lab (slide 4 of Functional Programming II)
+##--in class lab 
 
-#return rows a through b of mtcars
+#return rows a through b of a given df (e.g. mtcars)
 rows.df = function(a, b, df){
   #-------------- checks on input ----------------
   #first, we need these values to be integers

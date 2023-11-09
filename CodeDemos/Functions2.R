@@ -285,5 +285,18 @@ function.5 = function(a = ls()){
   a
 }
 
+ls()
+
+
+function.5 = function(a = ls()){
+  force(a)
+  z = 10
+  a
+}
+
+function.5()
+
+
+
 function.5() #will call all variables inside the function
 function.5(a = ls()) #will store all variables in your environment first

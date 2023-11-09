@@ -12,7 +12,20 @@ f = function(x){
 f(10)
 
 
-#more sophisticated example Downloading a package from github
+g = function(x, y){
+  x + y
+}
+
+
+g(1,2)
+
+
+formals(g)
+body(g)
+environment(g)
+
+
+#more sophisticated example: Downloading a package from github
 install.packages("devtools")
 library(devtools, quietly = TRUE)
 
@@ -26,6 +39,128 @@ library(fdapace, quietly = TRUE)
 #github - we'll use this later to write packages
 
 ?CreatePathPlot #gives help from a custom function
+
+
+mtcars
+
+
+#define a function which takes rows a thru b of mtcars
+
+#Exercise:
+#1. define a function which takes rows a thru b of mtcars
+#2. define a function which takes rows a thru b of a general data frame `df`
+
+
+rows_atob = function(a,b){
+  mtcars[a:b,]
+}
+
+mtcars
+
+rows_atob(1, 5)
+
+rows_atob(2, 4)
+
+rows_atob(b = 4, a = 2) #be aware of naming formals 
+
+
+rows_df_atob = function(df, a, b){
+  df[a:b,]
+}
+
+rows_df_atob(iris, 1, 5)
+rows_df_atob(mtcars, 1, 5)
+
+vector_f = function(vec){
+  vecsq = vec^2
+  df = data.frame(vec = vec, vecsq = vecsq)
+  df[1:10,]
+}
+
+vector_f(1:20)
+
+
+rm(list=ls())
+myFunc_01 <- function() {
+  x <- 1
+  y <- 2
+  c(x,y) }
+myFunc_01()
+
+
+
+#x <- 2
+
+
+rm(list=ls())
+
+myFunc_02 <- function() {
+  y <- 1
+  c(x,y) 
+}
+
+myFunc_02()
+
+
+rm(list=ls())
+x <- 1
+myFunc_03 <- function() {
+  y <- 2
+  z <- 4
+  myFunc_04 <- function() {
+    z <- 3
+    c(x,y,z) }
+  myFunc_04()
+}
+
+myFunc_03()
+
+myFunc_04()
+
+install.packages("codetools")
+library(codetools)
+rm(list=ls())
+
+myFunc_08 <- function() x + 1
+# NOTE myFunc_08 is not self-contained
+codetools::findGlobals(myFunc_08)
+
+myFunc_08()
+
+
+g = function(){
+  a = seq(1, 11, by = 2)
+  b = 3 * a
+  df = data.frame(a = a, b = b)
+  return(df)
+}
+
+findGlobals(g)
+
+g2 = function(a){
+  b = 3 * a
+  df = data.frame(a = a, b = b, c = c)
+  return(df)
+}
+
+findGlobals(g2)
+
+g2(a = seq(1,11,by = 2))
+
+
+?colnames
+
+
+df = iris
+colnames(x = df)
+
+
+myFunc_11 <- function(a, b) {
+  c(a, b) 
+}
+
+myFunc_11()
+
 
 
 ##--in class lab 
@@ -136,11 +271,11 @@ function.missing1(2) #throws an error (argument "arg2" is missing)
 #2)
 function.missing2 = function(arg1, arg2){
   print(c(missing(arg1), missing(arg2)))
-  arg1 + arg2
 }
 
 function.missing2(2) #key thing is that the "missing" statement
 #will still be run. So, you can use this to ensure that your function will run
+
 
 
 ##argument calls are local!

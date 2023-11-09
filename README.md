@@ -93,7 +93,7 @@ Overall, this course will be split into two main parts: (1) learning the basics 
 |:--- | :---  | :---:  |
 | CS 1: Analyzing Your Classmates | Class Survey Data | Tues, Sept. 19, 2023 | 
 |CS 2: Text Analysis and Data Visualization  | | Tues, Oct. 24, 2023|
-|CS 3: | | Tues, Nov. 21, 2023|
+|CS 3: Modeling & Programming| | Tues, Nov. 21, 2023|
 
 ### Final Project
 | Description | Due Date |

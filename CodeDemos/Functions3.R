@@ -2,32 +2,32 @@
 
 #saving to a variable vs. printing to screen
 
-sum_function <- function(x, y){
-  value <- x + y
+sum_function = function(x, y){
+  value = x + y
   return(value)
 }
-x <- 1:10
-y <- 11:20
+x = 1:10
+y = 11:20
 #print to screen
 sum_function(x, y)
 
 #storing for later use (to your environment)
-result <- sum.function(x, y)
+result = sum_function(x, y)
 
 
-sum_function2 <- function(x, y){
-  value1 <- x + y #sum
-  value2 <- sd(x)
-  value3 <- sd(y)
-  value4 <- sd(value1)
-  result <- list(sum = value1, sdx = value2, sdy = value3,
+sum_function2 = function(x, y){
+  value1 = x + y #sum
+  value2 = sd(x)
+  value3 = sd(y)
+  value4 = sd(value1)
+  result = list(sum = value1, sdx = value2, sdy = value3,
                  sd.sum = value4)
   #return(result)
 }
 
 sum_function2(x, y)
 
-result2 <- sum.function2(x, y)
+result2 = sum_function2(x, y)
 
 #Key point about return - if it is not used, then the 
 #last value saved in the function will be returned
@@ -39,10 +39,10 @@ result2 <- sum.function2(x, y)
 
 #build a function which calls many functions
 
-func1 <- function(arg_1) func2(arg_1)
-func2 <- function(arg_2) func3(arg_2)
-func3 <- function(arg_3) func4(arg_3)
-func4 <- function(arg_4) "Mystring" + arg_4
+func1 = function(arg_1) func2(arg_1)
+func2 = function(arg_2) func3(arg_2)
+func3 = function(arg_3) func4(arg_3)
+func4 = function(arg_4) "Mystring" + arg_4
 
 func1(99) #in essence will pass 99 through 4 functions and
 #at the end try to add 99 with "Mystring"
@@ -50,26 +50,26 @@ func1(99) #in essence will pass 99 through 4 functions and
 
 ##Using try() function
 
-func5 <- function(x, y){
+func5 = function(x, y){
   try(log(x + y)) #we know that log() does not work for negative values
-  temp <- x + y
+  temp = x + y
   return(temp)
 }
 
 func5(-3, -2)
 
 #note the above will still work as a warning only is thrown
-func6 <- function(x, y){
+func6 = function(x, y){
   log(x + y) #we know that log() does not work for negative values
-  temp <- x + y
+  temp = x + y
   return(temp)
 }
 
 #however, it won't work with characters
 
-func6 <- function(x, y){
+func6 = function(x, y){
   log(x + y) #we know that log() does not work for negative values
-  temp <- as.numeric(x) + as.numeric(y)
+  temp = as.numeric(x) + as.numeric(y)
   return(temp)
 }
 
@@ -77,9 +77,9 @@ func6 <- function(x, y){
 func6("3", 2)
 
 #fix by using try()
-func7 <- function(x, y){
+func7 = function(x, y){
   try(log(x + y)) #we know that log() does not work for negative values
-  temp <- as.numeric(x) + as.numeric(y)
+  temp = as.numeric(x) + as.numeric(y)
   return(temp)
 }
 
@@ -87,11 +87,12 @@ func7("3", 2)
 
 
 ##Trying the tryCatch() function
-show_condition <- function(code){
-  tryCatch(code, 
-           error = function(x){
-             y <<- x
-           })
+show_condition <- function(code) {
+  tryCatch(code,
+           error = function(x) "myError",
+           warning = function(x) "myWarning",
+           message = function(x) "myMessage"
+  ) 
 }
 
 show_condition(stop("!"))
@@ -101,7 +102,7 @@ show_condition(stop("!"))
 
 ##Example - concocted by Hai: creating a vector of strings where two strings match
 
-string_match <- function(string1, string2){
+string_match = function(string1, string2){
   #Input: string1 and string2 are vectors of strings of the same length
   #Output: same.string - vector containing all strings where string1 and string2 match
   
@@ -114,12 +115,12 @@ string_match <- function(string1, string2){
   if(length(string1) != length(string2)){
     stop("string1 and string2 must be of the same length!")
   }
-  logical_same <- string1 == string2
-  same_string <- string1[logical.same]
+  logical_same = string1 == string2
+  same_string = string1[logical.same]
   return(same_string)
 }
 
-string_1 <- c("I", "like", "Duke", "basketball")
-string_2 <- c("I", "like", "UNC", "basketball")
+string_1 = c("I", "like", "cats")
+string_2 = c("I", "like", "birds")
   
-string_same <- string.match(string_1, string_2)
+string_same = string.match(string_1, string_2)

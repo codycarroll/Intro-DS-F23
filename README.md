@@ -66,9 +66,9 @@ Overall, this course will be split into two main parts: (1) learning the basics 
   
  | Topic | Reading | Lab Assignment (HW) | Due Date | Code Demos|
    | :---  | :---:  | :---:  | :---:  | :---: |
-   | [Plotting in R](https://github.com/codycarroll/Intro-DS-F23/blob/main/Lectures/Plotting%20in%20R.pdf) | | | | [ggplot](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/ggplot1.R)|
+   | [Plotting in R](https://github.com/codycarroll/Intro-DS-F23/blob/main/Lectures/Plotting%20in%20R.pdf) | [Ch. 3 in R for Data Science](https://r4ds.had.co.nz/data-visualisation.html) | | | [ggplot](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/ggplot1.R)|
    | [Input and Output]() | | | | [Input and Output](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/Input_Output.R) |
-   |[More Plotting with ggplot2](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/ggplot2_dogs.R)|||| [ggplot and dogs](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/ggplot2_dogs.R) | 
+   |[More Plotting with ggplot2](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/ggplot2_dogs.R)| [Ch. 3 in R for Data Science](https://r4ds.had.co.nz/data-visualisation.html) ||| [ggplot and dogs](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/ggplot2_dogs.R) | 
    | [Wrangling Data](https://github.com/codycarroll/Intro-DS-F23/blob/main/Lectures/Wrangling%20Data.pdf) | | [HW4](https://github.com/codycarroll/Intro-DS-F23/blob/main/Assignments/HW4.pdf)| Friday 10/20| [Wrangling Data](https://github.com/codycarroll/Intro-DS-F23/blob/main/CodeDemos/data_wrangling.R)|
    
   **Statistical Modeling in R**

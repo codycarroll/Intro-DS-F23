@@ -91,3 +91,15 @@ x = c(1, 4, NA, 7, 10)
 mean(x)
 mean(x, na.rm = TRUE)
 
+
+take_avg = function(x){
+  (x[1]+x[2]+x[3])/3
+}
+
+take_avg(x = 1:3)
+take_avg(x = 1:2)
+
+take_avg("asdjhasjdha")
+
+
+

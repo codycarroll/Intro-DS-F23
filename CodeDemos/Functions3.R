@@ -56,7 +56,21 @@ func5 = function(x, y){
   return(temp)
 }
 
+
+func5(5, 10)
 func5(-3, -2)
+
+g = function(x){
+  temp = NA
+  temp = try(log(x)) #we know that log() does not work for negative values
+  return(temp)
+}
+
+xvec = c(1, 2, 3, NA, 3, 2, 1, -20, 50, sqrt(12), -4)
+
+for(i in 1:length(xvec)){
+  print(g(xvec[i]))
+}
 
 #note the above will still work as a warning only is thrown
 func6 = function(x, y){
@@ -115,12 +129,22 @@ string_match = function(string1, string2){
   if(length(string1) != length(string2)){
     stop("string1 and string2 must be of the same length!")
   }
+  
   logical_same = string1 == string2
-  same_string = string1[logical.same]
+  same_string = string1[logical_same]
   return(same_string)
 }
 
 string_1 = c("I", "like", "cats")
 string_2 = c("I", "like", "birds")
   
-string_same = string.match(string_1, string_2)
+string_same = string_match(string_1, string_2)
+string_same
+
+string_3 = c("I", "like", "cats", "!!!!!!")
+string_4 = c("I", "like", "birds")
+
+string_same = string_match(string_3, string_4)
+string_same
+
+

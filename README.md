@@ -148,4 +148,3 @@ Overall, this course will be split into two main parts: (1) learning the basics 
 * [Data Science Beginnings](https://open.spotify.com/show/5SY1TPw3FubdSxCqrxUKZv?si=a1eb2a858e384db3) A podcast hosted by me and Robert Clements, another prof in the MSDS program.
 * [R Weekly](https://rweekly.org/). About R.
 * [R-bloggers](https://www.r-bloggers.com/). About R.
-* [Data Tau](https://www.datatau.com/). About the DS industry.

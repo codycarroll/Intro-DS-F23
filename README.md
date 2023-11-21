@@ -91,8 +91,8 @@ Overall, this course will be split into two main parts: (1) learning the basics 
 ### Case Studies
 | Case Study | Data | Date |
 |:--- | :---  | :---:  |
-| CS 1: Analyzing Your Classmates | Class Survey Data | Tues, Sept. 19, 2023 | 
-|CS 2: Text Analysis and Data Visualization  | Palmer Penguin Data | Tues, Oct. 24, 2023|
+| CS 1: Analyzing Your Classmates |  | Tues, Sept. 19, 2023 | 
+|CS 2: Text Analysis and Data Visualization  | | Tues, Oct. 24, 2023|
 |CS 3: Modeling with Linear Regression & Functional Programming | | Tues, Nov. 21, 2023|
 
 ### Final Project
